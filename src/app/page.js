@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Products from './components/Products';
 import AppPromotion from './components/AppPromotion';
 import Testimonials from './components/Testimonials';
+import Pricing from './components/pricing';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <Products />
       <AppPromotion />
+      <Pricing />
       <Testimonials />
     </>
   );

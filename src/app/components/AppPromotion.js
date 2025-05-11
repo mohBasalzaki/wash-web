@@ -46,7 +46,7 @@ export default function AppPromotion() {
                 class="d-none d-md-block position-absolute z-1" 
                 loading="lazy" 
                 style={{
-                  width: "30vh",
+                  width: "35vh",
                   bottom: "0px",
                   left: "10vw"
                 }}
