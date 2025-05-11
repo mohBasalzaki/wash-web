@@ -1,0 +1,18 @@
+import React from 'react';
+import Features from '../components/Features';
+import AboutUs from '../components/AboutUs';
+import Services from '../components/Services';
+import Breadcrumb from '../components/Breadcrumb';
+import Content from '../components/Content';
+
+export default function About() {
+  return (
+    <>
+      <Breadcrumb title={"من نحن"} />
+      <Content />
+      <AboutUs />
+      <Features />
+      <Services />
+    </>
+  );
+}
