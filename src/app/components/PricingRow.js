@@ -1,5 +1,5 @@
 import React from 'react'
-import BookingButton from './BookingButton';
+import BookingButton from './BookingButton'
 
 export default function PricingRow() {
 const prices = [
@@ -77,7 +77,7 @@ const prices = [
                             ))}
                         </ul>
                         
-                        <BookingButton />
+                        <BookingButton dataPackage={price.title} />
                     </div>
                 </div>
             </div>

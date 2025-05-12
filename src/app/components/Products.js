@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from 'next/link'
 import React from 'react'
-import SectionTitle from './SectionTitle';
-import ProductsRow from './ProductsRow';
+import SectionTitle from './SectionTitle'
+import ProductsRow from './ProductsRow'
 
 export default function Products() {
   return (

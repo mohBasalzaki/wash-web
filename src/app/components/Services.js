@@ -1,6 +1,6 @@
 import React from 'react'
-import SectionTitle from './SectionTitle';
-import Link from 'next/link';
+import SectionTitle from './SectionTitle'
+import Link from 'next/link'
 
 export default function Services() {
   return (

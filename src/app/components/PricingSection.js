@@ -1,7 +1,7 @@
-import Link from 'next/link';
+import Link from 'next/link'
 import React from 'react'
-import SectionTitle from './SectionTitle';
-import PricingRow from './PricingRow';
+import SectionTitle from './SectionTitle'
+import PricingRow from './PricingRow'
 
 export default function PricingSection() {
   return (
