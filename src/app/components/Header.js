@@ -39,9 +39,9 @@ export default function Header() {
             <i class="ti ti-menu-3 text-black fs-2"></i>
           </button>
 
-          <div class="offcanvas offcanvas-end border-0" tabIndex={-1} id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas offcanvas-end border-0" style={{width:`90vw`}} tabIndex={-1} id="offcanvasNavbar2" aria-labelledby="offcanvas_navbar_meun">
             <div class="offcanvas-header">
-              <div class="offcanvas-title" id="offcanvasNavbar2Label">
+              <div class="offcanvas-title" id="offcanvas_navbar_meun">
                 <Image src="/image/logo.svg" width={100} height={0} alt="" style={{ height: 'auto' }} />
               </div>
               <button type="button" class="btn shadow-none border-0 ms-auto p-0" data-bs-dismiss="offcanvas" aria-label="Close">
