@@ -3,9 +3,9 @@ import React from 'react'
 import SectionTitle from './SectionTitle';
 import PricingRow from './PricingRow';
 
-export default function Pricing() {
+export default function PricingSection() {
   return (
-    <section id="pricing" class="py-0">
+    <section id="pricing-section" class="py-0">
       <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-md-5 mb-4">
           <SectionTitle title={"أسعارنا"} body={"إختر الباقة المناسبة لك"} />
