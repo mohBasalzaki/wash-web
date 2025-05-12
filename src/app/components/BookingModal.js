@@ -28,8 +28,9 @@ export default function BookingModal() {
                     <div class="my-3">
                         <SectionTitle title={"حجوزات المشاريع"} body={"نقدم حلول غسيل شاملة للمؤسسات والمشاريع الكبيرة"} />
                     </div>
+
                     {services.map((service, index) => (
-                        <a key={index} href={service.url} class="btn text-start border border-light-subtle mb-3">
+                        <a key={index} href={service.url} class="d-none btn text-start border border-light-subtle mb-3">
                             <div class="d-flex align-items-center">
                                 <img src={service.img} class="me-2" width="70" />
                                 <div class="d-block">

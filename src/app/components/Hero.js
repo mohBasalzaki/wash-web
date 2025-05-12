@@ -1,5 +1,5 @@
 import React from 'react'
-import BookingButton from './BookingButton';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -15,8 +15,9 @@ export default function Hero() {
             </div>
 
             <div class="d-flex justify-content-center justify-content-md-start">
-              <BookingButton />
-              <a href="#" class="btn btn-outline-primary px-4 ms-2">حمل التطبيق</a>
+              <Link href="#pricing-section" class="btn btn-primary px-4 ms-2">احجز موعد</Link>
+
+              <Link href="#" class="btn btn-outline-primary px-4 ms-2">حمل التطبيق</Link>
             </div>
           </div>
 

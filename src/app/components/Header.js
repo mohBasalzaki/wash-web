@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from 'next/navigation';
-import BookingButton from "../components/BookingButton";
 
 export default function Header() {
   const pathname = usePathname();
@@ -55,7 +54,7 @@ export default function Header() {
 
               <Link href="/contact" class="btn btn-outline-primary px-4">تواصل معنا</Link>
               
-              <BookingButton />
+              <Link href="#pricing-section" class="btn btn-primary px-4 ms-2">احجز موعد</Link>
             </div>
           </div>
         </div>
