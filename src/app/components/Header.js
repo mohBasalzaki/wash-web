@@ -2,10 +2,30 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const offcanvasEl = document.querySelector(".offcanvas.show");
+      if (offcanvasEl) {
+        const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+        if (offcanvas) offcanvas.hide();
+      }
+    };
+
+    const observer = new MutationObserver(() => {
+      handleRouteChange();
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
+  }, [pathname]);
 
   return (
     <header>
@@ -24,7 +44,6 @@ export default function Header() {
               <div class="offcanvas-title" id="offcanvasNavbar2Label">
                 <Image src="/image/logo.svg" width={100} height={0} alt="" style={{ height: 'auto' }} />
               </div>
-
               <button type="button" class="btn shadow-none border-0 ms-auto p-0" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="ti ti-x text-black fs-5"></i>
               </button>
@@ -53,8 +72,7 @@ export default function Header() {
               </ul>
 
               <Link href="/contact" class="btn btn-outline-primary px-4">تواصل معنا</Link>
-              
-              <Link href="#pricing-section" class="btn btn-primary px-4 ms-2">احجز موعد</Link>
+              <Link href="/#pricing-section" class="btn btn-primary px-4 ms-2">احجز موعد</Link>
             </div>
           </div>
         </div>

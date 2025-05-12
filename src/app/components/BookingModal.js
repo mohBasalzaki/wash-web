@@ -22,8 +22,16 @@ export default function BookingModal() {
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-fullscreen-sm-down">
             <div class="modal-content border-0">
 
-                <div class="modal-body">
+                <div class="modal-body position-relative">
                     <img src="/image/modal_img.webp" class="w-100" loading="lazy" />
+
+                    <button
+                      type="button"
+                      class="btn-close btn-close-white position-absolute m-4 p-1"
+                      style={{ top: 0, left: 0, right: 'auto' }}
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    />
 
                     <div class="my-3">
                         <SectionTitle title={"حجوزات المشاريع"} body={"نقدم حلول غسيل شاملة للمؤسسات والمشاريع الكبيرة"} />
@@ -41,7 +49,7 @@ export default function BookingModal() {
                         </a>
                     ))}
 
-                    <a href="#" class="btn btn-outline-success w-100">
+                    <a href="#" class="btn btn-outline-success rounded-1 w-100">
                         <i class="ti ti-brand-whatsapp"></i>
                         <span class="ms-2">تواصل واتساب</span>
                     </a>
