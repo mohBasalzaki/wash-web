@@ -1,5 +1,6 @@
 import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
+import SectionTitle from '../components/SectionTitle'
 
 export const metadata = {
   title: "ريواش | الشراكات",
@@ -10,6 +11,18 @@ export default function Partnerships() {
   return (
     <>
       <Breadcrumb title={"الشراكات"} />
+
+      <section id="store_page" class="pb-md-5 pb-3">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <SectionTitle title={"اكتشف جميع شركائنا"} body={"تعرف على الشركات التي وثقت بريواش وشاركتنا النجاح"} />
+            <button type="button" class="d-none d-md-block btn btn-outline-primary px-4">طلب شراكة</button>
+          </div>
+          
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+          </div>
+        </div>
+      </section>
     </>
   )
 }

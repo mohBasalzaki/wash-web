@@ -2,16 +2,16 @@ import React from 'react'
 import SectionTitle from './SectionTitle'
 import Link from 'next/link'
 
-export default function AboutUs() {
+export default function AboutUs({ bgImg, classTag }) {
   return (
     <section id="about_section" class="py-md-5 py-3">
       <div class="container">
         <div class="row row-cols-1 row-cols-md-2 align-items-center g-4">
           <div class="col">
-            <div class="card h-50vh bg-primary border-0 p-5">
+            <div class="card h-50vh bg-img bg-primary border-0 p-5" style={{ backgroundImage: `url(${bgImg})` }}>
               <img 
-                src="/image/logo_2.webp" 
-                class="m-auto" 
+                src="/image/logo_2.webp"
+                class={`m-auto ${classTag}`}
                 width="250" 
                 loading="lazy" 
                 alt="ReWash Logo" 

@@ -15,7 +15,7 @@ export default function About() {
     <>
       <Breadcrumb title={"من نحن"} />
       <Content />
-      <AboutUs />
+      <AboutUs bgImg={"image/clement-m-Ng3xrviPrhk-unsplash.png"} classTag={""} />
       <Features />
       <Services />
     </>

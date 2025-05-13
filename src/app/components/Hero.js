@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Hero() {
   return (
-    <section id="hero_section" class="bg-img py-md-5 py-3" style={{backgroundImage: `url('image/hero-bg.webp')`}}>
+    <section id="hero_section" class="bg-img d-flex align-items-center py-md-5 py-3" style={{ backgroundImage: `url('image/hero-bg.webp')` , height:`95vh` }}>
       <div class="container">
         <div class="row row-cols-1 row-cols-md-2 align-items-center g-4">
           <div class="col order-1 order-md-0">
