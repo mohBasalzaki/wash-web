@@ -38,7 +38,7 @@ export default function ProductsRow() {
   ];
 
   return (
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    <>
       {products.map((product, index) => (
         <div class="col" key={index}>
           <div class="card border-light-subtle p-3">
@@ -73,6 +73,6 @@ export default function ProductsRow() {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 }

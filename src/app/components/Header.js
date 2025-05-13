@@ -64,6 +64,9 @@ export default function Header() {
                   <Link class={`nav-link ${pathname === '/store' ? 'active' : ''}`} href="/store">المتجر</Link>
                 </li>
                 <li class="nav-item">
+                  <Link class={`nav-link ${pathname === '/pricing' ? 'active' : ''}`} href="/pricing">الباقات</Link>
+                </li>
+                <li class="nav-item">
                   <Link class={`nav-link ${pathname === '/blog' ? 'active' : ''}`} href="/blog">المدونة</Link>
                 </li>
                 <li class="nav-item">

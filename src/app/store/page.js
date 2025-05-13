@@ -18,7 +18,10 @@ export default function Store() {
           <div class="mb-4">
             <SectionTitle title={"اكتشف منتجات ريواش"} body={"اشترِ منتجات العناية بالسيارة التي نستخدمها في خدماتنا."} />
           </div>
-          <ProductsRow />
+          
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <ProductsRow />
+          </div>
         </div>
       </section>
     </>

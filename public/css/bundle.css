@@ -140,7 +140,7 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
     border-radius: 50% !important;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 576px) {
     .text-justify {
         text-align: start;
     }

@@ -51,9 +51,9 @@ const prices = [
 ];
 
   return (
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <>
         {prices.map((price, index) => (
-            <div class="col" key={index}>
+            <div class="col item" key={index}>
                 <div class={`card text-center mb-3 ` + (price.featured ? 'border-primary' : 'border-light-subtle')}>
                     <div class={`card-header border-0 py-3 ` + (price.featured ? 'text-bg-primary' : '')}>
                         <p class="my-0 fw-normal">{price.title}</p>
@@ -82,6 +82,6 @@ const prices = [
                 </div>
             </div>
         ))}
-    </div>
+    </>
   );
 }
