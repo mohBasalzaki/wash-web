@@ -13,7 +13,7 @@ export default function Pricing() {
         <>
             <Breadcrumb title={"الباقات"} />
     
-            <section id="store_pricing" class="pb-md-5 pb-3">
+            <section id="pricing_page" class="pb-md-5 pb-3">
                 <div class="container">
                     <div class="mb-4">
                         <SectionTitle title={"اكتشف باقات ريواش"} body={"إختر الباقة المناسبة للعناية بسيارتك."} />

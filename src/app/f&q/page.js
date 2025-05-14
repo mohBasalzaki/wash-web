@@ -1,6 +1,7 @@
 import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import SectionTitle from '../components/SectionTitle'
+import Accordion from '../components/Accordion';
 
 export const metadata = {
   title: "ريواش | الأسئلة الشائعة",
@@ -12,13 +13,14 @@ export default function FQ() {
     <>
       <Breadcrumb title={"الأسئلة الشائعة"} />
 
-      <section id="store_page" class="pb-md-5 pb-3">
+      <section id="f&q_page" class="pb-4">
         <div class="container">
           <div class="mb-4">
             <SectionTitle title={"الأسئلة الشائعة"} body={"إجابات لأكثر الأسئلة المتداولة حول ريواش"} />
           </div>
-          
-          <div class="row row-cols-1 row-cols-md-4 g-4">
+
+          <div class="accordion" id="accordionExample">
+            <Accordion />
           </div>
         </div>
       </section>

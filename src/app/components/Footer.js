@@ -1,14 +1,18 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
 
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer>
       <section id="footer_section" class="bg-img text-bg-dark py-md-5 py-3" style={{backgroundImage: `url('image/footer_bg.webp')`}}>
         <div class="container">
           <div class="row g-4">
             <div class="col-12 col-md-6">
-              <img src="/image/logo.svg" class="mb-3" width="120" alt="" />
+              <img src="image/logo.svg" class="mb-3" width="120" alt="" />
               
               <p class="text-justify">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة.</p>
               
@@ -85,14 +89,14 @@ export default function Footer() {
       <section id="copy_right" class="text-bg-dark p-1">
         <div class="container">
           <div class="text-center">
-            <small>جميع الحقوق محفوظة لموقع ريواش &copy; {new Date().getFullYear()}</small>
+            <small>جميع الحقوق محفوظة لموقع ريواش &copy; {year}</small>
           </div>
         </div>
       </section>
 
       <div class="whatsapp position-fixed z-1"> 
         <a href="https://wa.me/" target="_blank">
-          <img src="/image/whatsapp.gif" width="55" alt="" />
+          <img src="image/whatsapp.gif" width="55" alt="" />
         </a> 
       </div>
     </footer>

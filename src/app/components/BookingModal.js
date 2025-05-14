@@ -23,7 +23,7 @@ export default function BookingModal() {
             <div class="modal-content border-0">
 
                 <div class="modal-body position-relative">
-                    <img src="/image/modal_img.webp" class="w-100" loading="lazy" />
+                    <img src="image/modal_img.webp" class="w-100" loading="lazy" />
 
                     <button
                       type="button"

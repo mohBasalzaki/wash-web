@@ -10,7 +10,7 @@ export default function AboutUs({ bgImg, classTag }) {
           <div class="col">
             <div class="card h-50vh bg-img bg-primary border-0 p-5" style={{ backgroundImage: `url(${bgImg})` }}>
               <img 
-                src="/image/logo_2.webp"
+                src="image/logo_2.webp"
                 class={`m-auto ${classTag}`}
                 width="250" 
                 loading="lazy" 
