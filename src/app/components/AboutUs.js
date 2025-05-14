@@ -2,7 +2,7 @@ import React from 'react'
 import SectionTitle from './SectionTitle'
 import Link from 'next/link'
 
-export default function AboutUs({ bgImg, classTag }) {
+export default function AboutUs({ bgImg, classTag, hideBtn }) {
   return (
     <section id="about_section" class="py-md-5 py-3">
       <div class="container">
@@ -22,7 +22,7 @@ export default function AboutUs({ bgImg, classTag }) {
             <div class="mb-4">
               <SectionTitle title={"هذا النص هو مثال"} body={"هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة."} />
             </div>
-            <Link href="/about" class="btn btn-primary px-4">قراءة المزيد</Link>
+            <Link href="/about" class={`btn btn-primary px-4 ${hideBtn}`}>قراءة المزيد</Link>
           </div>
         </div>
       </div>

@@ -17,12 +17,12 @@ export default function Accordion() {
   ];
 
   return (
-    <div class="accordion" id="accordionExample">
+    <>
       {accordions.map((accordion, index) => (
-        <div class="accordion-item rounded border border-2 border-light-subtle mb-3" key={index}>
+        <div class="accordion-item bg-body-tertiary rounded border-0 mb-3" key={index}>
           <h2 class="accordion-header" id={`heading-${index}`}>
             <button
-              class="accordion-button bg-light-subtle rounded shadow-none collapsed"
+              class="accordion-button bg-body-tertiary rounded shadow-none collapsed"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target={`#collapse-${index}`}
@@ -34,16 +34,16 @@ export default function Accordion() {
           </h2>
           <div
             id={`collapse-${index}`}
-            class="accordion-collapse collapse"
+            class="accordion-collapse collapse bg-body-tertiary rounded-bottom"
             aria-labelledby={`heading-${index}`}
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body">
-              {accordion.description}
+            <div class="accordion-body pt-0">
+              <small>{accordion.description}</small>
             </div>
           </div>
         </div>
       ))}
-    </div>
+    </>
   )
 }

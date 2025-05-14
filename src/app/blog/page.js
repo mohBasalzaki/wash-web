@@ -1,5 +1,8 @@
 import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
+import FeaturePost from '../components/FeaturePost';
+import MostCommonPost from '../components/MostCommonPost';
+import PostCard from '../components/PostCard';
 
 export const metadata = {
   title: "ريواش | المدونة",
@@ -10,6 +13,25 @@ export default function Blog() {
   return (
     <>
       <Breadcrumb title={"المدونة"} />
+
+      <section id="blog_page" class="pb-4">
+        <div class="container">
+          <div class="row mb-4 g-3">
+            <div class="col-12 col-md-8">
+              <FeaturePost />
+            </div>
+
+            <div class="col-12 col-md-4">
+              <h1 class="fw-bold fs-6 mt-0 mb-3">الأكثر شيوعاً</h1>
+              <MostCommonPost />
+            </div>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-3 g-3">
+            <PostCard />
+          </div>
+        </div>
+      </section>
     </>
   )
 }
