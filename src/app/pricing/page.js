@@ -11,7 +11,7 @@ export const metadata = {
 export default function Pricing() {
     return (
         <>
-            <Breadcrumb title={"المتجر"} />
+            <Breadcrumb title={"الباقات"} />
     
             <section id="store_pricing" class="pb-md-5 pb-3">
                 <div class="container">

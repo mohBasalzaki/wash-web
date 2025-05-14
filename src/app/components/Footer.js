@@ -49,6 +49,7 @@ export default function Footer() {
                 <div class="col">
                   <ul class="navbar-nav">
                     <li class="nav-item">
+                      <Link class="nav-link p-0" href="/pricing">الباقات</Link>
                       <Link class="nav-link p-0" href="/blog">المدونة</Link>
                       <Link class="nav-link p-0" href="/partnerships">الشراكات</Link>
                       <Link class="nav-link p-0" href="/f&q">الأسئلة الشائعة</Link>
