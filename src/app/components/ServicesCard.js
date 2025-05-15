@@ -1,51 +1,37 @@
 import React from 'react'
 
-export default function ServicesCard() {
-  const services = [
-    {
-      img: "image/1000007195.png",
-      title: "غسيل سيارات",
-      body: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
-    },
-    {
-      img: "image/1000007196.png",
-      title: "تغيير كفر",
-      body: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
-    },
-    {
-      img: "image/1000007197.png",
-      title: "تلبيس ارضية",
-      body: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
-    },
-    {
-      img: "image/1000007198.png",
-      title: "تغيير زيت",
-      body: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
-    },
-    {
-      img: "image/1000007199.png",
-      title: "مناديل",
-      body: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
-    },
-    {
-      img: "image/1000007200.png",
-      title: "سطحة",
-      body: "هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف التى يولدها التطبيق."
+export default async function ServicesCard() {
+  let services = [];
+
+  try {
+    const res = await fetch('https://rewash-store.bright-ignite.com/api/home/services', { cache: 'no-store' });
+    const json = await res.json();
+
+    if (json.status && json.data && Array.isArray(json.data.children)) {
+      services = json.data.children;
     }
-  ];
+  } catch (error) {
+    console.error('Error fetching services data:', error);
+  }
 
   return (
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        {services.map((service, index) => (
-        <div class="col mb-md-5 mb-0" key={index}>
+        {services.length > 0 ? (
+        services.map((service) => (
+        <div class="col mb-md-5 mb-0" key={service.id}>
             <div class="card bg-body-tertiary text-center position-relative border-0 p-md-4 p-3">
-                <img src={service.img} class="service_card_img d-none d-md-block position-absolute" width={80} alt={service.title} />
-                <img src={service.img} class="service_card_img d-md-none" width={80} alt={service.title} />
+                <img src={service.image} class="service_card_img d-none d-md-block position-absolute" width={80} alt={service.title} />
+                <img src={service.image} class="service_card_img d-md-none" width={80} alt={service.title} />
                 <h1 class="fw-semibold fs-5 mt-md-4 mt-0 pt-2">{service.title}</h1>
-                <p class="text-body-secondary m-0">{service.body}</p>
+                <p class="text-body-secondary m-0">{service.description}</p>
             </div>
         </div>
-        ))}
+        ))
+      ) : (
+        <div className="col">
+          <p className="text-center text-muted">لا توجد خدمات متاحة حالياً.</p>
+        </div>
+      )}
     </div>
   );
 }
