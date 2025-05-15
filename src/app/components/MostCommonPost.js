@@ -12,7 +12,7 @@ export default function MostCommonPost() {
             <div class="card-body">
                 <small class="text-body-secondary">غسيل سيارات</small>
                 <h1 class="text-truncate fw-bold fs-5 mt-1 mb-0">
-                    <Link href="#" class="text-body text-decoration-none">هذا النص هو مثال لنص يمكن استبداله في نفس المكان هنا في هذا المكان بالتحديد</Link>
+                    <Link href={"#"} class="text-body text-decoration-none">هذا النص هو مثال لنص يمكن استبداله في نفس المكان هنا في هذا المكان بالتحديد</Link>
                 </h1>
             </div>
         </div>

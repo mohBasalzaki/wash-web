@@ -12,25 +12,25 @@ export default function Footer() {
         <div class="container">
           <div class="row g-4">
             <div class="col-12 col-md-6">
-              <img src="image/logo.svg" class="mb-3" width="120" alt="" />
+              <img src="/image/logo.svg" class="mb-3" width="120" alt="" />
               
               <p class="text-justify">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة.</p>
               
               <ul class="d-flex p-0 m-0">
                 <li class="list-unstyled m-md-0 mx-3">
-                  <a href="#" class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
+                  <Link href={"#"} class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
                     <i class="ti ti-brand-instagram"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li class="list-unstyled m-md-0 ms-md-3 mx-3">
-                  <a href="#" class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
+                  <Link href={"#"} class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
                     <i class="ti ti-brand-x"></i>
-                  </a>
+                  </Link>
                 </li>
                 <li class="list-unstyled m-md-0 ms-md-3 mx-3">
-                  <a href="#" class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
+                  <Link href={"#"} class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
                     <i class="ti ti-brand-facebook"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -42,9 +42,9 @@ export default function Footer() {
                 <div class="col">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <Link class="nav-link p-0" href="/">الرئيسية</Link>
-                      <Link class="nav-link p-0" href="/about">من نحن</Link>
-                      <Link class="nav-link p-0" href="/services">الخدمات</Link>
+                      <Link class="nav-link p-0" href={"/"}>الرئيسية</Link>
+                      <Link class="nav-link p-0" href={"/about"}>من نحن</Link>
+                      <Link class="nav-link p-0" href={"/services"}>الخدمات</Link>
                       <Link class="nav-link p-0" href="/store">المتجر</Link>
                     </li>
                   </ul>
@@ -53,10 +53,10 @@ export default function Footer() {
                 <div class="col">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <Link class="nav-link p-0" href="/pricing">الباقات</Link>
-                      <Link class="nav-link p-0" href="/blog">المدونة</Link>
-                      <Link class="nav-link p-0" href="/partnerships">الشراكات</Link>
-                      <Link class="nav-link p-0" href="/f&q">الأسئلة الشائعة</Link>
+                      <Link class="nav-link p-0" href={"/pricing"}>الباقات</Link>
+                      <Link class="nav-link p-0" href={"/blog"}>المدونة</Link>
+                      <Link class="nav-link p-0" href={"/partnerships"}>الشراكات</Link>
+                      <Link class="nav-link p-0" href={"/f&q"}>الأسئلة الشائعة</Link>
                     </li>
                   </ul>
                 </div>
@@ -68,17 +68,17 @@ export default function Footer() {
               
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link p-0" href="tel:920003884">
+                  <Link class="nav-link p-0" href={"tel:920003884"}>
                     <i class="ti ti-phone"></i>
                     920003884
-                  </a>
+                  </Link>
                 </li>
 
                 <li class="nav-item">
-                  <a class="nav-link p-0" href="mailto:info@rewash.com">
+                  <Link class="nav-link p-0" href={"mailto:info@rewash.com"}>
                     <i class="ti ti-mail"></i>
                     info@rewash.com
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -95,9 +95,9 @@ export default function Footer() {
       </section>
 
       <div class="whatsapp position-fixed z-1"> 
-        <a href="https://wa.me/" target="_blank">
-          <img src="image/whatsapp.gif" width="55" alt="" />
-        </a> 
+        <Link href={"https://wa.me/966920003884"} target="_blank">
+          <img src="/image/whatsapp.gif" width="55" alt="" />
+        </Link> 
       </div>
     </footer>
   );

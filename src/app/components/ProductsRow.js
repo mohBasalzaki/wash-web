@@ -59,12 +59,12 @@ export default function ProductsRow() {
                 <div class="d-flex align-items-center">
                   <div class="d-flex align-items-center">
                     <span class="fw-bold">{product.price}</span>
-                    <img src="image/Saudi_Riyal_Symbol.webp" width="15" alt="SAR" class="ms-1" />
+                    <img src="/image/Saudi_Riyal_Symbol.webp" width="15" alt="SAR" class="ms-1" />
                   </div>
 
                   <div class="d-flex align-items-center text-body-tertiary text-decoration-line-through ms-3">
                     <span class="fw-bold">{product.originalPrice}</span>
-                    <img src="image/Saudi_Riyal_Symbol.webp" width="15" alt="SAR" class="ms-1" />
+                    <img src="/image/Saudi_Riyal_Symbol.webp" width="15" alt="SAR" class="ms-1" />
                   </div>
                 </div>
 

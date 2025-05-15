@@ -8,7 +8,7 @@ export default function Breadcrumb({ title }) {
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item">
-                        <Link class="text-decoration-none text-body-secondary" href="/">الرئيسية</Link>
+                        <Link href={"/"} class="text-decoration-none text-body-secondary">الرئيسية</Link>
                     </li>
 
                     <li class="breadcrumb-item text-body" aria-current="page">{title}</li>

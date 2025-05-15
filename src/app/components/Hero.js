@@ -15,14 +15,14 @@ export default function Hero() {
             </div>
 
             <div class="d-flex justify-content-center justify-content-md-start">
-              <Link href="#pricing-section" class="btn btn-primary px-4 ms-2">احجز موعد</Link>
+              <Link href={"#pricing-section"} class="btn btn-primary px-4 ms-2">احجز موعد</Link>
 
               <Link href="#promo_section" class="btn btn-outline-primary px-4 ms-2">حمل التطبيق</Link>
             </div>
           </div>
 
           <div class="col text-center">
-            <img src="image/mobile_1.webp" class="w-90" loading="lazy" alt="" />
+            <img src="/image/mobile_1.webp" class="w-90" loading="lazy" alt="" />
           </div>
         </div>
       </div>

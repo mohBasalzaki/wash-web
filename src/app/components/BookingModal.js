@@ -1,5 +1,6 @@
 import React from 'react'
 import SectionTitle from './SectionTitle'
+import Link from 'next/link';
 
 export default function BookingModal() {
   const services = [
@@ -23,7 +24,7 @@ export default function BookingModal() {
             <div class="modal-content border-0">
 
                 <div class="modal-body position-relative">
-                    <img src="image/modal_img.webp" class="w-100" loading="lazy" />
+                    <img src="/image/modal_img.webp" class="w-100" loading="lazy" />
 
                     <button
                       type="button"
@@ -49,10 +50,10 @@ export default function BookingModal() {
                         </a>
                     ))}
 
-                    <a href="#" class="btn btn-outline-success rounded-1 w-100">
+                    <Link href={"#"} class="btn btn-outline-success rounded-1 w-100">
                         <i class="ti ti-brand-whatsapp"></i>
                         <span class="ms-2">تواصل واتساب</span>
-                    </a>
+                    </Link>
                 </div>
 
             </div>

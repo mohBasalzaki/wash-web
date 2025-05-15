@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function FeaturePost() {
   return (
-    <Link href="#" class="card text-bg-dark position-relative border-0">
+    <Link href={"#"} class="card text-bg-dark position-relative border-0">
         <div class="card-img bg-img h-50vh" style={{backgroundImage: "url('image/jan-kopriva-sh_7sFEFICI-unsplash.png')"}} alt=""></div>
 
         <div class="card-img-overlay p-0">

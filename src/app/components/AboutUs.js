@@ -10,7 +10,7 @@ export default function AboutUs({ bgImg, classTag, hideBtn }) {
           <div class="col">
             <div class="card h-50vh bg-img bg-primary border-0 p-5" style={{ backgroundImage: `url(${bgImg})` }}>
               <img 
-                src="image/logo_2.webp"
+                src="/image/logo_2.webp"
                 class={`m-auto ${classTag}`}
                 width="250" 
                 loading="lazy" 
@@ -22,7 +22,7 @@ export default function AboutUs({ bgImg, classTag, hideBtn }) {
             <div class="mb-4">
               <SectionTitle title={"هذا النص هو مثال"} body={"هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة."} />
             </div>
-            <Link href="/about" class={`btn btn-primary px-4 ${hideBtn}`}>قراءة المزيد</Link>
+            <Link href={"/about"} class={`btn btn-primary px-4 ${hideBtn}`}>قراءة المزيد</Link>
           </div>
         </div>
       </div>
