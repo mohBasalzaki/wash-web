@@ -47,7 +47,7 @@ export default async function Hero() {
           </div>
 
           <div class="col text-center">
-            <img src="/image/mobile_1.webp" class="w-90" loading="lazy" alt="" />
+            <img src="/image/mobile_1.webp" class="w-100" loading="lazy" alt="" />
           </div>
         </div>
       </div>

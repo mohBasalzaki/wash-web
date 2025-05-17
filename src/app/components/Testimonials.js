@@ -4,21 +4,21 @@ import SectionTitle from './SectionTitle'
 export default function Testimonials() {
   const testimonials = [
     {
-      img: "image/client.webp",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUEYRnkRBLz_IlcdnSo9OwfOdnctl0J9DMTg&s",
       name: "خالد العنزي",
       role: "عميل ريواش",
       rating: 4,
       review: "خدمة ريواش فاقت توقعاتي! طلبت غسيل داخلي وخارجي من التطبيق، ووصل الفريق في الوقت المحدد وكانوا في قمة الاحترافية. السيارة صارت تلمع وكأنها توها طالعة من المعرض. أعجبني كثيرًا استخدامهم لمنتجات عالية الجودة،"
     },
     {
-      img: "image/client.webp",
+      img: "https://t3.ftcdn.net/jpg/03/53/59/46/360_F_353594684_Ca3p9RIc3xgQ1Y6ff7Jk6nVe54v9NbpQ.jpg",
       name: "خالد العنزي",
       role: "عميل ريواش",
       rating: 4,
       review: "خدمة ريواش فاقت توقعاتي! طلبت غسيل داخلي وخارجي من التطبيق، ووصل الفريق في الوقت المحدد وكانوا في قمة الاحترافية. السيارة صارت تلمع وكأنها توها طالعة من المعرض. أعجبني كثيرًا استخدامهم لمنتجات عالية الجودة،"
     },
     {
-      img: "image/client.webp",
+      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUEYRnkRBLz_IlcdnSo9OwfOdnctl0J9DMTg&s",
       name: "خالد العنزي",
       role: "عميل ريواش",
       rating: 4,
@@ -38,7 +38,13 @@ export default function Testimonials() {
             <div class="col" key={index}>
               <div class="card bg-body-tertiary border-0 p-md-4 p-3">
                 <div class="d-flex align-items-center mb-3">
-                  <img src={testimonial.img} width="50" alt={testimonial.name} />
+                  <img class="d-none" src={testimonial.img} width="50" alt={testimonial.name} />
+
+                  <div
+                    class="bg-img rounded p-4"
+                    style={{ backgroundImage: `url(${testimonial.img})` }}
+                    alt={testimonial.name}
+                  ></div>
 
                   <div class="ms-2">
                     <h6 class="fw-bold mb-0">{testimonial.name}</h6>
@@ -46,7 +52,7 @@ export default function Testimonials() {
                   </div>
 
                   <div class="ms-auto">
-                    <i class="ti ti-star-filled text-body-tertiary"></i>
+                    <i class="ti ti-star-filled text-warning"></i>
                     <i class="ti ti-star-filled text-warning"></i>
                     <i class="ti ti-star-filled text-warning"></i>
                     <i class="ti ti-star-filled text-warning"></i>

@@ -63,7 +63,7 @@ const prices = [
                         <div className="d-flex align-items-baseline justify-content-center">
                             <h1 class="card-title pricing-card-title fw-bold mt-0">
                                 <span>{price.price}</span>
-                                <img src="/image/Saudi_Riyal_Symbol.webp" width="20" alt="SAR" class="ms-1" />
+                                <img src="/image/Saudi_Riyal_Symbol.svg" width="20" alt="SAR" class="ms-1" />
                             </h1>
                             <span class="mx-1">/</span>
                             <small>{price.time}</small>
