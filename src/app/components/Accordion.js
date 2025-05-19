@@ -17,7 +17,7 @@ export default function Accordion() {
   ];
 
   return (
-    <>
+    <div class="accordion" id="accordionExample">
       {accordions.map((accordion, index) => (
         <div class="accordion-item bg-body-tertiary rounded border-0 mb-3" key={index}>
           <h2 class="accordion-header" id={`heading-${index}`}>
@@ -44,6 +44,6 @@ export default function Accordion() {
           </div>
         </div>
       ))}
-    </>
+    </div>
   )
 }

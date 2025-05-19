@@ -1,5 +1,7 @@
 import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
+import ContactForm from '../components/ContactForm';
+import ContactCTA from '../components/ContactCTA';
 
 export const metadata = {
   title: "ريواش | تواصل معنا",
@@ -10,6 +12,20 @@ export default function Contact() {
   return (
     <>
       <Breadcrumb title={"تواصل معنا"} />
+
+      <section id="contact_page" class="pb-4">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2 g-md-4 g-3">
+            <ContactForm />
+
+            <div class="col bg-img d-flex flex-column justify-content-center text-bg-dark border-0 rounded p-md-4 p-5" style={{backgroundImage: `url("/image/mintosko-V4b2j7f1dfc-unsplash.png")`}}>
+              <div class="mx-auto">
+                <ContactCTA />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

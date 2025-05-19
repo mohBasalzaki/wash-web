@@ -50,7 +50,7 @@ export default function Header() {
             </div>
 
             <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <ul class="navbar-nav justify-content-center flex-grow-1 mb-md-0 mb-3">
                 <li class="nav-item">
                   <Link class={`nav-link ${pathname === '/' ? 'active' : ''}`} href={"/"}>الرئيسية</Link>
                 </li>
@@ -76,7 +76,7 @@ export default function Header() {
 
               <Link href={"/contact"} class="btn btn-outline-primary px-4">تواصل معنا</Link>
               
-              <Link href={"/#pricing-section"} class="btn btn-primary px-4 ms-2">احجز موعد</Link>
+              <Link href={"/pricing"} class="btn btn-primary px-4 ms-2">احجز موعد</Link>
             </div>
           </div>
         </div>

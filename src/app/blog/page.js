@@ -16,18 +16,19 @@ export default function Blog() {
 
       <section id="blog_page" class="pb-4">
         <div class="container">
-          <div class="row mb-4 g-3">
+          <div class="row mb-md-4 mb-3 g-md-4 g-3">
             <div class="col-12 col-md-8">
               <FeaturePost />
             </div>
 
-            <div class="col-12 col-md-4">
-              <h1 class="fw-bold fs-6 mt-0 mb-3">الأكثر شيوعاً</h1>
+            <div class="col-12 col-md-4 d-flex flex-column justify-content-between">
+              <h1 class="fw-bold fs-6 mt-0 mb-2">الأكثر شيوعاً</h1>
+              
               <MostCommonPost />
             </div>
           </div>
 
-          <div class="row row-cols-1 row-cols-md-3 g-3">
+          <div class="row row-cols-1 row-cols-md-3 g-md-4 g-3">
             <PostCard />
           </div>
         </div>

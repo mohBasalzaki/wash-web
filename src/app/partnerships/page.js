@@ -1,6 +1,8 @@
 import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import SectionTitle from '../components/SectionTitle'
+import PartnersLogo from '../components/PartnersLogo';
+import RequestModal from '../components/RequestModal';
 
 export const metadata = {
   title: "ريواش | الشراكات",
@@ -12,17 +14,21 @@ export default function Partnerships() {
     <>
       <Breadcrumb title={"الشراكات"} />
 
-      <section id="store_page" class="pb-md-5 pb-3">
+      <section id="partnerships_page" class="pb-md-5 pb-3">
         <div class="container">
-          <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
             <SectionTitle title={"اكتشف جميع شركائنا"} body={"تعرف على الشركات التي وثقت بريواش وشاركتنا النجاح"} />
-            <button type="button" class="d-none d-md-block btn btn-outline-primary px-4">طلب شراكة</button>
+
+            <button type="button" class="btn btn-outline-primary px-4 mt-md-0 mt-3" data-bs-toggle="modal" data-bs-target="#request_modal">طلب شراكة</button>
           </div>
           
-          <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="row row-cols-2 row-cols-md-5 g-4">
+            <PartnersLogo />
           </div>
         </div>
       </section>
+
+      <RequestModal />
     </>
   )
 }

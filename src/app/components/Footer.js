@@ -17,19 +17,19 @@ export default function Footer() {
               <p class="text-justify">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة.</p>
               
               <ul class="d-flex p-0 m-0">
-                <li class="list-unstyled m-md-0 mx-3">
-                  <Link href={"#"} class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
-                    <i class="ti ti-brand-instagram"></i>
+                <li class="list-unstyled me-3">
+                  <Link href={"#"} class="text-decoration-none">
+                    <img src="/image/instagram.png" width="25" loading="lazy" class="" alt="" />
                   </Link>
                 </li>
-                <li class="list-unstyled m-md-0 ms-md-3 mx-3">
-                  <Link href={"#"} class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
-                    <i class="ti ti-brand-x"></i>
+                <li class="list-unstyled me-3">
+                  <Link href={"#"} class="text-decoration-none">
+                    <img src="/image/x-twitter.png" width="22" loading="lazy" class="" alt="" />
                   </Link>
                 </li>
-                <li class="list-unstyled m-md-0 ms-md-3 mx-3">
-                  <Link href={"#"} class="text-decoration-none btn text-light border rounded-1 fs-5 pt-2">
-                    <i class="ti ti-brand-facebook"></i>
+                <li class="list-unstyled me-3">
+                  <Link href={"#"} class="text-decoration-none">
+                    <img src="/image/facebook.png" width="25" loading="lazy" class="" alt="" />
                   </Link>
                 </li>
               </ul>
@@ -68,15 +68,15 @@ export default function Footer() {
               
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <Link class="nav-link p-0" href={"tel:920003884"}>
-                    <i class="ti ti-phone"></i>
+                  <Link class="nav-link p-0 mb-1" href={"tel:+966920003884"}>
+                    <img src="/image/phone.png" width="25" loading="lazy" class="me-2" alt="920003884" />
                     920003884
                   </Link>
                 </li>
 
                 <li class="nav-item">
-                  <Link class="nav-link p-0" href={"mailto:info@rewash.com"}>
-                    <i class="ti ti-mail"></i>
+                  <Link class="nav-link p-0 mb-1" href={"mailto:info@rewash.com"}>
+                    <img src="/image/email.png" width="25" loading="lazy" class="me-2" alt="info@rewash.com" />
                     info@rewash.com
                   </Link>
                 </li>
