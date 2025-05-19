@@ -1,10 +1,45 @@
-'use client'
-
 import Link from 'next/link'
 import React from 'react'
 
-export default function Footer() {
-  const year = new Date().getFullYear()
+export default async function Footer() {
+  let post = {
+    phone: "00966505982918",
+    email: "info@rewash.store",
+    address: "ريواش",
+    store_link: null,
+    facebook: null,
+    instagram: null,
+    twitter: null,
+    site_name: "ريواش",
+    site_description: "",
+    site_logo: "",
+    site_favicon: ""
+  };
+
+  try {
+    const res = await fetch('https://rewash-store.bright-ignite.com/api/info', { cache: 'no-store' });
+    const json = await res.json();
+
+    if (json.status && json.data) {
+      post = {
+        phone: json.data.phone,
+        email: json.data.email,
+        address: json.data.address,
+        store_link: json.data.store_link,
+        facebook: json.data.facebook,
+        instagram: json.data.instagram,
+        twitter: json.data.twitter,
+        site_name: json.data.site_name,
+        site_description: json.data.site_description,
+        site_logo: json.data.site_logo,
+        site_favicon: json.data.site_favicon,
+      };
+    }
+  } catch (error) {
+    console.error('Error fetching Site Info:', error);
+  };
+
+  const year = new Date().getFullYear();
 
   return (
     <footer>
@@ -12,9 +47,9 @@ export default function Footer() {
         <div class="container">
           <div class="row g-4">
             <div class="col-12 col-md-6">
-              <img src="/image/logo.svg" class="mb-3" width="120" alt="" />
+              <img src="/image/logo.svg" class="mb-3" width="120" alt={post.site_name} />
               
-              <p class="text-justify">هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة.</p>
+              <p class="text-justify">{post.site_description}</p>
               
               <ul class="d-flex p-0 m-0">
                 <li class="list-unstyled me-3">
@@ -45,7 +80,7 @@ export default function Footer() {
                       <Link class="nav-link p-0" href={"/"}>الرئيسية</Link>
                       <Link class="nav-link p-0" href={"/about"}>من نحن</Link>
                       <Link class="nav-link p-0" href={"/services"}>الخدمات</Link>
-                      <Link class="nav-link p-0" href="/store">المتجر</Link>
+                      <Link class="nav-link p-0" href={"/store"}>المتجر</Link>
                     </li>
                   </ul>
                 </div>
@@ -68,16 +103,16 @@ export default function Footer() {
               
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <Link class="nav-link p-0 mb-1" href={"tel:+966920003884"}>
-                    <img src="/image/phone.png" width="25" loading="lazy" class="me-2" alt="920003884" />
-                    920003884
+                  <Link class="nav-link p-0 mb-1" href={`tel:${post.phone}`}>
+                    <img src="/image/phone.png" width="25" loading="lazy" class="me-2" alt={post.phone} />
+                    {post.phone}
                   </Link>
                 </li>
 
                 <li class="nav-item">
-                  <Link class="nav-link p-0 mb-1" href={"mailto:info@rewash.com"}>
-                    <img src="/image/email.png" width="25" loading="lazy" class="me-2" alt="info@rewash.com" />
-                    info@rewash.com
+                  <Link class="nav-link p-0 mb-1" href={`mailto:${post.email}`}>
+                    <img src="/image/email.png" width="25" loading="lazy" class="me-2" alt={post.email} />
+                    {post.email}
                   </Link>
                 </li>
               </ul>
@@ -95,7 +130,7 @@ export default function Footer() {
       </section>
 
       <div class="whatsapp position-fixed z-1"> 
-        <Link href={"https://wa.me/966920003884"} target="_blank">
+        <Link href={`https://wa.me/${post.phone}`} target="_blank">
           <img src="/image/whatsapp.gif" width="55" alt="" />
         </Link> 
       </div>
