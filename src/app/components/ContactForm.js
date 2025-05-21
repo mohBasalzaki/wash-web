@@ -9,18 +9,18 @@ export default function ContactForm() {
 
             <form action=""  class="mt-md-4 mt-3" method="post">
                 <div class="mb-md-4 mb-3">
-                    <label for="full-name" class="form-label">اسمك الكامل</label>
+                    <label htmlFor="full-name" class="form-label">اسمك الكامل</label>
                     <input type="name" class="form-control" name="full_name" id="full-name" placeholder="اكتب اسمك هنا" />
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 mb-md-4 mb-3">
                     <div class="mb-md-0 mb-3">
-                        <label for="email" class="form-label">الايميل</label>
+                        <label htmlFor="email" class="form-label">الايميل</label>
                         <input type="email" class="form-control" name="" id="email" placeholder="name@domain.sa" />
                     </div>
 
                     <div class="mb-0">
-                        <label for="phone" class="form-label">رقم الجوال</label>
+                        <label htmlFor="phone" class="form-label">رقم الجوال</label>
                         <input
                             type="tel"
                             class="form-control"
@@ -36,12 +36,12 @@ export default function ContactForm() {
                 </div>
 
                 <div class="mb-md-4 mb-3">
-                    <label for="subject" class="form-label">الموضوع</label>
+                    <label htmlFor="subject" class="form-label">الموضوع</label>
                     <input type="text" class="form-control" name="" id="subject" placeholder="اكتب الموضوع هنا" />
                 </div>
 
                 <div class="mb-md-4 mb-3">
-                    <label for="massage" class="form-label">الرسالة</label>
+                    <label htmlFor="massage" class="form-label">الرسالة</label>
                     <textarea class="form-control" id="massage" rows="5" placeholder="اكتب رسالتك هنا"></textarea>
                 </div>
 

@@ -60,7 +60,7 @@ const prices = [
                     </div>
                     
                     <div class="card-body">
-                        <div className="d-flex align-items-baseline justify-content-center">
+                        <div class="d-flex align-items-baseline justify-content-center">
                             <h1 class="card-title pricing-card-title fw-bold mt-0">
                                 <span>{price.price}</span>
                                 <img src="/image/Saudi_Riyal_Symbol.svg" width="20" alt="SAR" class="ms-1" />

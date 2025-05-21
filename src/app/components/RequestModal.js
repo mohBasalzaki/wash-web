@@ -21,12 +21,12 @@ export default function RequestModal() {
 
                     <form action="" method="post">
                         <div class="mb-3">
-                            <label for="full-name" class="form-label">اسم الجهة</label>
+                            <label htmlFor="full-name" class="form-label">اسم الجهة</label>
                             <input type="name" class="form-control" name="full_name" id="full-name" placeholder="ادخل اسم الجهة هنا" />
                         </div>
 
                         <div class="mb-3">
-                            <label for="phone" class="form-label">رقم التواصل</label>
+                            <label htmlFor="phone" class="form-label">رقم التواصل</label>
                             <input
                                 type="tel"
                                 class="form-control"
@@ -41,7 +41,7 @@ export default function RequestModal() {
                         </div>
 
                         <div class="mb-3">
-                            <label for="massage" class="form-label">نبذة عن الشركاة</label>
+                            <label htmlFor="massage" class="form-label">نبذة عن الشركاة</label>
                             <textarea class="form-control" id="massage" rows="5" placeholder="اكتب رسالتك هنا"></textarea>
                         </div>
 

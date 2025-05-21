@@ -28,8 +28,8 @@ export default async function ServicesCard() {
         </div>
         ))
       ) : (
-        <div className="col">
-          <p className="text-center text-muted">لا توجد خدمات متاحة حالياً.</p>
+        <div class="col">
+          <p class="text-center text-muted">لا توجد خدمات متاحة حالياً.</p>
         </div>
       )}
     </div>
