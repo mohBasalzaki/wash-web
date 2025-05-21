@@ -1,4 +1,3 @@
-import React from 'react'
 import SectionTitle from '../components/SectionTitle'
 
 export default function RequestModal() {
@@ -12,7 +11,7 @@ export default function RequestModal() {
 
                         <button
                             type="button"
-                            class="btn-close position-absolute m-4 p-1"
+                            class="btn-close position-absolute m-3 p-0"
                             style={{ top: 0, left: 0, right: 'auto' }}
                             data-bs-dismiss="modal"
                             aria-label="Close"
@@ -21,12 +20,12 @@ export default function RequestModal() {
 
                     <form action="" method="post">
                         <div class="mb-3">
-                            <label htmlFor="full-name" class="form-label">اسم الجهة</label>
-                            <input type="name" class="form-control" name="full_name" id="full-name" placeholder="ادخل اسم الجهة هنا" />
+                            <label htmlFor="full-name" class="form-label">اسم الجهة <span class="text-danger">*</span></label>
+                            <input type="name" class="form-control" name="full_name" id="full-name" placeholder="ادخل اسم الجهة هنا" required />
                         </div>
 
                         <div class="mb-3">
-                            <label htmlFor="phone" class="form-label">رقم التواصل</label>
+                            <label htmlFor="phone" class="form-label">رقم التواصل <span class="text-danger">*</span></label>
                             <input
                                 type="tel"
                                 class="form-control"
@@ -35,14 +34,14 @@ export default function RequestModal() {
                                 pattern="05[0-9]{8}"
                                 maxlength="10"
                                 title="يجب كتابة 10 أرقام وتبدأ بـ 05"
-                                required=""
+                                required
                                 name="PhoneNumber"
                             />
                         </div>
 
                         <div class="mb-3">
-                            <label htmlFor="massage" class="form-label">نبذة عن الشركاة</label>
-                            <textarea class="form-control" id="massage" rows="5" placeholder="اكتب رسالتك هنا"></textarea>
+                            <label htmlFor="massage" class="form-label">نبذة عن الشركاة <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="massage" rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary w-100">ارسال</button>

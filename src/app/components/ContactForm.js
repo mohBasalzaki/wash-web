@@ -1,4 +1,3 @@
-import React from 'react'
 import SectionTitle from './SectionTitle'
 
 export default function ContactForm() {
@@ -9,18 +8,18 @@ export default function ContactForm() {
 
             <form action=""  class="mt-md-4 mt-3" method="post">
                 <div class="mb-md-4 mb-3">
-                    <label htmlFor="full-name" class="form-label">اسمك الكامل</label>
-                    <input type="name" class="form-control" name="full_name" id="full-name" placeholder="اكتب اسمك هنا" />
+                    <label htmlFor="full-name" class="form-label">اسمك الكامل <span class="text-danger">*</span></label>
+                    <input type="name" class="form-control" name="full_name" id="full-name" placeholder="اكتب اسمك هنا" required />
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 mb-md-4 mb-3">
                     <div class="mb-md-0 mb-3">
-                        <label htmlFor="email" class="form-label">الايميل</label>
-                        <input type="email" class="form-control" name="" id="email" placeholder="name@domain.sa" />
+                        <label htmlFor="email" class="form-label">الايميل <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="" id="email" placeholder="name@domain.sa" required />
                     </div>
 
                     <div class="mb-0">
-                        <label htmlFor="phone" class="form-label">رقم الجوال</label>
+                        <label htmlFor="phone" class="form-label">رقم الجوال <span class="text-danger">*</span></label>
                         <input
                             type="tel"
                             class="form-control"
@@ -29,15 +28,15 @@ export default function ContactForm() {
                             pattern="05[0-9]{8}"
                             maxlength="10"
                             title="يجب كتابة 10 أرقام وتبدأ بـ 05"
-                            required=""
+                            required
                             name="PhoneNumber"
                         />
                     </div>
                 </div>
 
                 <div class="mb-md-4 mb-3">
-                    <label htmlFor="subject" class="form-label">الموضوع</label>
-                    <input type="text" class="form-control" name="" id="subject" placeholder="اكتب الموضوع هنا" />
+                    <label htmlFor="subject" class="form-label">الموضوع <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="" id="subject" placeholder="اكتب الموضوع هنا" required />
                 </div>
 
                 <div class="mb-md-4 mb-3">

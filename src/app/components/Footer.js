@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 
 export default async function Footer() {
   let post = {
@@ -39,6 +38,10 @@ export default async function Footer() {
     console.error('Error fetching Site Info:', error);
   };
 
+  const cleanedPhone = post.phone.startsWith("00")
+    ? post.phone.slice(2)
+    : post.phone;
+
   const year = new Date().getFullYear();
 
   return (
@@ -54,17 +57,17 @@ export default async function Footer() {
               <ul class="d-flex p-0 m-0">
                 <li class="list-unstyled me-3">
                   <Link href={"#"} class="text-decoration-none">
-                    <img src="/image/instagram.png" width="25" loading="lazy" class="" alt="" />
+                    <img src="/image/instagram.png" width="25" loading="lazy" alt="instagram" />
                   </Link>
                 </li>
                 <li class="list-unstyled me-3">
                   <Link href={"#"} class="text-decoration-none">
-                    <img src="/image/x-twitter.png" width="22" loading="lazy" class="" alt="" />
+                    <img src="/image/x-twitter.png" width="22" loading="lazy" alt="x-twitter" />
                   </Link>
                 </li>
                 <li class="list-unstyled me-3">
                   <Link href={"#"} class="text-decoration-none">
-                    <img src="/image/facebook.png" width="25" loading="lazy" class="" alt="" />
+                    <img src="/image/facebook.png" width="25" loading="lazy" alt="facebook" />
                   </Link>
                 </li>
               </ul>
@@ -130,7 +133,7 @@ export default async function Footer() {
       </section>
 
       <div class="whatsapp position-fixed z-1"> 
-        <Link href={`https://wa.me/${post.phone}`} target="_blank">
+        <Link href={`https://wa.me/${cleanedPhone}`} target="_blank">
           <img src="/image/whatsapp.gif" width="55" alt="" />
         </Link> 
       </div>

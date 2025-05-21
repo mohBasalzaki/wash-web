@@ -1,5 +1,3 @@
-// app/blog/page.js أو pages/blog.js حسب المشروع
-import React from 'react';
 import Breadcrumb from '../components/Breadcrumb';
 import FeaturePost from '../components/FeaturePost';
 import MostCommonPost from '../components/MostCommonPost';

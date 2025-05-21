@@ -1,4 +1,3 @@
-import React from 'react'
 import BookingButton from './BookingButton'
 
 export default function PricingRow() {

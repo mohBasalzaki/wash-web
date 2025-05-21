@@ -1,8 +1,5 @@
-// app/blog/[slug]/page.js
-import React from "react";
 import Link from "next/link";
 
-// 👇 هذه الدالة تولد metadata ديناميكية
 export async function generateMetadata({ params }) {
   const res = await fetch("https://rewash-store.bright-ignite.com/api/blogs", {
     cache: "no-store",
@@ -86,7 +83,7 @@ export default async function BlogPostPage({ params }) {
       <section id="blog_page" class="pb-4">
         <div class="container">
           <div
-            class="bg-img h-50vh"
+            class="bg-img h-50vh rounded mb-md-4 mb-3"
             style={{ backgroundImage: `url(${post.image})` }}
             alt={post.title}
           ></div>

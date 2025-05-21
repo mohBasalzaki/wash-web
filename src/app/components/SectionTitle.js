@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function SectionTitle({ title, body }) {
   return (
     <div class="section_title">

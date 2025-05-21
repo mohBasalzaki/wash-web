@@ -1,4 +1,3 @@
-import React from 'react'
 import SectionTitle from './SectionTitle'
 import Link from 'next/link';
 
@@ -25,18 +24,18 @@ export default function BookingModal() {
 
                     <form action=""  class="mt-md-4 mt-3" method="post">
                         <div class="mb-2">
-                            <label htmlFor="full-name" class="form-label">اسمك الكامل</label>
-                            <input type="name" class="form-control" name="full_name" id="full-name" placeholder="اكتب اسمك هنا" />
+                            <label htmlFor="full-name" class="form-label">اسمك الكامل <span class="text-danger">*</span></label>
+                            <input type="name" class="form-control" name="full_name" id="full-name" placeholder="اكتب اسمك هنا" required />
                         </div>
 
                         <div class="row row-cols-1 row-cols-md-2 mb-2">
                             <div class="mb-md-0 mb-2">
-                                <label htmlFor="email" class="form-label">الايميل</label>
-                                <input type="email" class="form-control" name="" id="email" placeholder="name@domain.sa" />
+                                <label htmlFor="email" class="form-label">الايميل <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" name="" id="email" placeholder="name@domain.sa" required />
                             </div>
 
                             <div class="mb-0">
-                                <label htmlFor="phone" class="form-label">رقم الجوال</label>
+                                <label htmlFor="phone" class="form-label">رقم الجوال <span class="text-danger">*</span></label>
                                 <input
                                     type="tel"
                                     class="form-control"
@@ -45,15 +44,15 @@ export default function BookingModal() {
                                     pattern="05[0-9]{8}"
                                     maxlength="10"
                                     title="يجب كتابة 10 أرقام وتبدأ بـ 05"
-                                    required=""
+                                    required
                                     name="PhoneNumber"
                                 />
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label htmlFor="subject" class="form-label">العنوان</label>
-                            <input type="text" class="form-control" name="" id="subject" placeholder="اكتب الحي/اسم الشارع هنا" />
+                            <label htmlFor="subject" class="form-label">العنوان <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="" id="subject" placeholder="اكتب الحي/اسم الشارع هنا" required />
                         </div>
 
                         <button type="submit" class="btn btn-primary rounded-1 w-100">أطلب الأن</button>

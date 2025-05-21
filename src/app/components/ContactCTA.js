@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import React from 'react'
 
 export default function ContactCTA() {
-    const ctas = [
+    const posts = [
         {
             title: "الموقع",
             address: "حي الملك سلمان، الرياض",
@@ -25,13 +24,13 @@ export default function ContactCTA() {
 
     return (
         <>
-            {ctas.map((cta, index) => (
-                <Link class="text-decoration-none text-light" href={cta.url} target="_blank">
-                    <div key={index} class="d-flex align-items-center mb-md-4 mb-3">
-                        <img src={cta.icon} class="me-3" loading="lazy" width={70} />
+            {posts.map((post) => (
+                <Link class="text-decoration-none text-light" href={post.url} target="_blank">
+                    <div key={post.id} class="d-flex align-items-center mb-md-4 mb-3">
+                        <img src={post.icon} class="me-3" loading="lazy" width={70} />
                         <div class="d-block">
-                            <h1 class="fw-samibold fs-5 mt-0 mb-2">{cta.title}</h1>
-                            <span>{cta.address}</span>
+                            <h1 class="fw-samibold fs-5 mt-0 mb-2">{post.title}</h1>
+                            <span>{post.address}</span>
                         </div>
                     </div>
                 </Link>

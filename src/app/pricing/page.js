@@ -1,4 +1,3 @@
-import React from 'react'
 import Breadcrumb from '../components/Breadcrumb'
 import SectionTitle from '../components/SectionTitle'
 import PricingRow from '../components/PricingRow'
