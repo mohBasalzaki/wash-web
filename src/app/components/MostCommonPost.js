@@ -8,7 +8,7 @@ export default function MostCommonPost({ posts }) {
                 <div key={post.id} class="row align-items-center mb-md-1 mb-2 g-0">
                     <div class="col-4">
                         <Link href={`/blog/${post.slug}`}>
-                            <div class="bg-img rounded p-5" style={{backgroundImage: `url(${post.image})`}} alt={post.title}></div>
+                            <div class="bg-img rounded p-5" style={{backgroundImage: `url(${"/image/about_img.svg" || post.image})`}} alt={post.title}></div>
                         </Link>
                     </div>
                     

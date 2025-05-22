@@ -1,43 +1,7 @@
 import Link from 'next/link'
 
-export default async function Footer() {
-  let post = {
-    phone: "00966505982918",
-    email: "info@rewash.store",
-    address: "ريواش",
-    store_link: null,
-    facebook: null,
-    instagram: null,
-    twitter: null,
-    site_name: "ريواش",
-    site_description: "",
-    site_logo: "",
-    site_favicon: ""
-  };
-
-  try {
-    const res = await fetch('https://rewash-store.bright-ignite.com/api/info', { cache: 'no-store' });
-    const json = await res.json();
-
-    if (json.status && json.data) {
-      post = {
-        phone: json.data.phone,
-        email: json.data.email,
-        address: json.data.address,
-        store_link: json.data.store_link,
-        facebook: json.data.facebook,
-        instagram: json.data.instagram,
-        twitter: json.data.twitter,
-        site_name: json.data.site_name,
-        site_description: json.data.site_description,
-        site_logo: json.data.site_logo,
-        site_favicon: json.data.site_favicon,
-      };
-    }
-  } catch (error) {
-    console.error('Error fetching Site Info:', error);
-  };
-
+export default function Footer({ post }) {
+  
   const cleanedPhone = post.phone.startsWith("00")
     ? post.phone.slice(2)
     : post.phone;
@@ -50,23 +14,23 @@ export default async function Footer() {
         <div class="container">
           <div class="row g-4">
             <div class="col-12 col-md-6">
-              <img src="/image/logo.svg" class="mb-3" width="120" alt={post.site_name} />
+              <img src="/image/logo.svg" class="mb-3" width="120" title={post.site_name} alt={post.site_name} />
               
               <p class="text-justify">{post.site_description}</p>
               
               <ul class="d-flex p-0 m-0">
                 <li class="list-unstyled me-3">
-                  <Link href={"#"} class="text-decoration-none">
+                  <Link href={post.instagram} class="text-decoration-none" target="_blank">
                     <img src="/image/instagram.png" width="25" loading="lazy" alt="instagram" />
                   </Link>
                 </li>
                 <li class="list-unstyled me-3">
-                  <Link href={"#"} class="text-decoration-none">
+                  <Link href={post.twitter} class="text-decoration-none" target="_blank">
                     <img src="/image/x-twitter.png" width="22" loading="lazy" alt="x-twitter" />
                   </Link>
                 </li>
                 <li class="list-unstyled me-3">
-                  <Link href={"#"} class="text-decoration-none">
+                  <Link href={post.facebook} class="text-decoration-none" target="_blank">
                     <img src="/image/facebook.png" width="25" loading="lazy" alt="facebook" />
                   </Link>
                 </li>
@@ -127,7 +91,7 @@ export default async function Footer() {
       <section id="copy_right" class="text-bg-dark p-1">
         <div class="container">
           <div class="text-center">
-            <small>جميع الحقوق محفوظة لموقع ريواش &copy; {year}</small>
+            <small>جميع الحقوق محفوظة لدى {post.site_name} &copy; {year}</small>
           </div>
         </div>
       </section>

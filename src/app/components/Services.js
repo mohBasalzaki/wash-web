@@ -1,28 +1,13 @@
-import SectionTitle from './SectionTitle'
 import Link from 'next/link'
+import SectionTitle from './SectionTitle'
+import { fetchHomeServices } from '../utils/api';
 
 export default async function Services() {
-  let post = {
-    id: 1,
-    title: 'عنوان افتراضي',
-    sub_title: 'وصف افتراضي',
-    description: 'تفاصيل افتراضية',
-    image: '/image/services_img.svg'
-  };
+  let post = [];
 
   try {
-    const res = await fetch('https://rewash-store.bright-ignite.com/api/home/services', { cache: 'no-store' });
-    const json = await res.json();
-
-    if (json.status && json.data) {
-      post = {
-        id: json.data.id,
-        title: json.data.title,
-        sub_title: json.data.sub_title,
-        description: json.data.description,
-        image: json.data.image
-      };
-    }
+    post = await fetchHomeServices();
+    
   } catch (error) {
     console.error('Error fetching services data:', error);
   }
@@ -40,7 +25,7 @@ export default async function Services() {
           </div>
 
           <div class="col">
-            <div class="card h-50vh bg-img border-0 p-5" style={{backgroundImage: 'url("image/services_img.svg")'}}></div>
+            <div class="card h-50vh bg-img border-0 p-5" style={{backgroundImage: `url(${"/image/services_img.svg" || post.image})`}}></div>
           </div>
         </div>
       </div>

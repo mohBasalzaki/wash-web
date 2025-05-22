@@ -1,53 +1,47 @@
 import SectionTitle from './SectionTitle'
+import { fetchHomeTestimonials } from '../utils/api';
 
-export default function Testimonials() {
-  const testimonials = [
-    {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUEYRnkRBLz_IlcdnSo9OwfOdnctl0J9DMTg&s",
-      name: "خالد العنزي",
-      role: "عميل ريواش",
-      rating: 4,
-      review: "خدمة ريواش فاقت توقعاتي! طلبت غسيل داخلي وخارجي من التطبيق، ووصل الفريق في الوقت المحدد وكانوا في قمة الاحترافية. السيارة صارت تلمع وكأنها توها طالعة من المعرض. أعجبني كثيرًا استخدامهم لمنتجات عالية الجودة،"
-    },
-    {
-      img: "https://t3.ftcdn.net/jpg/03/53/59/46/360_F_353594684_Ca3p9RIc3xgQ1Y6ff7Jk6nVe54v9NbpQ.jpg",
-      name: "خالد العنزي",
-      role: "عميل ريواش",
-      rating: 4,
-      review: "خدمة ريواش فاقت توقعاتي! طلبت غسيل داخلي وخارجي من التطبيق، ووصل الفريق في الوقت المحدد وكانوا في قمة الاحترافية. السيارة صارت تلمع وكأنها توها طالعة من المعرض. أعجبني كثيرًا استخدامهم لمنتجات عالية الجودة،"
-    },
-    {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUEYRnkRBLz_IlcdnSo9OwfOdnctl0J9DMTg&s",
-      name: "خالد العنزي",
-      role: "عميل ريواش",
-      rating: 4,
-      review: "خدمة ريواش فاقت توقعاتي! طلبت غسيل داخلي وخارجي من التطبيق، ووصل الفريق في الوقت المحدد وكانوا في قمة الاحترافية. السيارة صارت تلمع وكأنها توها طالعة من المعرض. أعجبني كثيرًا استخدامهم لمنتجات عالية الجودة،"
+export default async function Testimonials() {
+  let post = [];
+
+  let testimonials = [];
+
+  try {
+    const data = await fetchHomeTestimonials();
+
+    post = data;
+
+    if (data && Array.isArray(data.children)) {
+      testimonials = data.children;
     }
-  ];
+    
+  } catch (error) {
+    console.error('Error fetching testimonials data:', error);
+  }
 
   return (
     <section id="testimonials" class="py-md-5 py-3">
       <div class="container">
         <div class="mb-md-5 mb-4">
-          <SectionTitle title={"قالو عنا"} body={"آراء وتقييمات المستخدمين حول تجربتهم مع تقارير"} />
+          <SectionTitle title={post.title} body={post.sub_title} />
         </div>
         
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          {testimonials.map((testimonial, index) => (
-            <div class="col" key={index}>
+          {testimonials.map((testimonial) => (
+            <div class="col" key={testimonial.id}>
               <div class="card bg-body-tertiary border-0 p-md-4 p-3">
                 <div class="d-flex align-items-center mb-3">
-                  <img class="d-none" src={testimonial.img} width="50" alt={testimonial.name} />
+                  <img class="d-none" src={"/image/about_img.svg" || testimonial.img} width="50" alt={testimonial.title} />
 
                   <div
                     class="bg-img rounded p-4"
-                    style={{ backgroundImage: `url(${testimonial.img})` }}
-                    alt={testimonial.name}
+                    style={{ backgroundImage: `url(${"/image/about_img.svg" || testimonial.img})` }}
+                    alt={testimonial.title}
                   ></div>
 
                   <div class="ms-2">
-                    <h6 class="fw-bold mb-0">{testimonial.name}</h6>
-                    <small class="text-body-secondary m-0">{testimonial.role}</small>
+                    <h6 class="fw-bold mb-0">{testimonial.title}</h6>
+                    <small class="text-body-secondary m-0">{testimonial.sub_title}</small>
                   </div>
 
                   <div class="ms-auto">
@@ -59,7 +53,9 @@ export default function Testimonials() {
                   </div>
                 </div>
                 
-                <p class="text-start text-body-secondary m-0">{testimonial.review}</p>
+                <p class="text-start text-body-secondary text-truncate line-clamp-4 m-0">
+                  {testimonial.description}
+                </p>
               </div>
             </div>
           ))}

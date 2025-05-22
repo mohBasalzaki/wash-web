@@ -12,7 +12,7 @@ export default function PricingSection() {
         </div>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
-          <PricingRow />
+          <PricingRow limit={3} />
         </div>
 
         <div class="text-center">

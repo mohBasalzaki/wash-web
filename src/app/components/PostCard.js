@@ -7,7 +7,7 @@ export default function PostCard({ post }) {
       <Link href={`/blog/${post.slug}`}>
         <div
           class="bg-img h-30vh rounded p-5"
-          style={{ backgroundImage: `url(${post.image})` }}
+          style={{ backgroundImage: `url(${"/image/about_img.svg" || post.image})` }}
         />
       </Link>
 

@@ -5,7 +5,7 @@ import Image from "next/image"
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
-export default function Header() {
+export default function Heade({ post }) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -32,7 +32,7 @@ export default function Header() {
       <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
         <div class="container">
           <Link class="navbar-brand" href={"/"}>
-            <Image src="/image/logo.svg" width={120} height={50} alt="Logo" />
+            <Image src="/image/logo.svg" width={120} height={50} title={post.site_name} alt={post.site_name} />
           </Link>
 
           <button class="navbar-toggler shadow-none border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
@@ -42,7 +42,7 @@ export default function Header() {
           <div class="offcanvas offcanvas-end border-0" style={{width:`90vw`}} tabIndex={-1} id="offcanvasNavbar2" aria-labelledby="offcanvas_navbar_meun">
             <div class="offcanvas-header">
               <div class="offcanvas-title" id="offcanvas_navbar_meun">
-                <Image src="/image/logo.svg" width={100} height={40} alt="Logo" />
+                <Image src="/image/logo.svg" width={100} height={40} title={post.site_name} alt={post.site_name} />
               </div>
               <button type="button" class="btn shadow-none border-0 ms-auto p-0" data-bs-dismiss="offcanvas" aria-label="Close">
                 <i class="ti ti-x text-black fs-5"></i>

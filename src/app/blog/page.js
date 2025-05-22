@@ -2,6 +2,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import FeaturePost from '../components/FeaturePost';
 import MostCommonPost from '../components/MostCommonPost';
 import PostCard from '../components/PostCard';
+import { fetchPosts } from '../utils/api';
 
 export const metadata = {
   title: "ريواش | المدونة",
@@ -9,13 +10,10 @@ export const metadata = {
 };
 
 async function getPosts() {
-  const res = await fetch('https://rewash-store.bright-ignite.com/api/blogs', {
-    cache: 'no-store',
-  });
-  const json = await res.json();
+  const data = await fetchPosts();
 
-  if (json?.status && Array.isArray(json.data)) {
-    return json.data.map((item) => ({
+  if (data?.status && Array.isArray(data)) {
+    return data.map((item) => ({
       id: item.id,
       title: item.title?.ar || item.title?.en || "",
       description: item.description?.ar || item.description?.en || "",

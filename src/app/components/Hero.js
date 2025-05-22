@@ -1,27 +1,12 @@
 import Link from 'next/link'
+import { fetchHomeHero } from '../utils/api';
 
 export default async function Hero() {
-  let post = {
-    id: 1,
-    title: 'عنوان افتراضي',
-    sub_title: 'وصف افتراضي',
-    description: 'تفاصيل افتراضية',
-    image: '/image/hero-bg.webp'
-  };
+  let post = [];
 
   try {
-    const res = await fetch('https://rewash-store.bright-ignite.com/api/home/hero', { cache: 'no-store' });
-    const json = await res.json();
+    post = await fetchHomeHero();
 
-    if (json.status && json.data) {
-      post = {
-        id: json.data.id,
-        title: json.data.title,
-        sub_title: json.data.sub_title,
-        description: json.data.description,
-        image: json.data.image
-      };
-    }
   } catch (error) {
     console.error('Error fetching hero data:', error);
   }

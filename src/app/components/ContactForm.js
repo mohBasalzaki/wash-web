@@ -26,7 +26,7 @@ export default function ContactForm() {
                             id="forPhone"
                             placeholder="05****"
                             pattern="05[0-9]{8}"
-                            maxlength="10"
+                            maxLength="10"
                             title="يجب كتابة 10 أرقام وتبدأ بـ 05"
                             required
                             name="PhoneNumber"

@@ -1,30 +1,14 @@
 import SectionTitle from './SectionTitle'
+import { fetchHomeAbout } from '../utils/api';
 
 export default async function Content() {
-  let post = {
-    id: null,
-    title: 'عنوان افتراضي',
-    sub_title: 'وصف افتراضي',
-    description: 'خدمة غسيل السيارات المتنقلة المتميزة',
-    image: ''
-  };
+  let post = null;
 
   try {
-    const res = await fetch('https://rewash-store.bright-ignite.com/api/home/about', { cache: 'no-store' });
-    const json = await res.json();
+    const data = await fetchHomeAbout();
 
-    if (json.status && json.data && Array.isArray(json.data.children)) {
-      const item = json.data.children.find(child => child.id === 12);
-
-      if (item) {
-        post = {
-          id: item.id,
-          title: item.title,
-          sub_title: item.sub_title,
-          description: item.description,
-          image: item.image
-        };
-      }
+    if (data && Array.isArray(data.children)) {
+      post = data.children.find(child => child.id === 12);
     }
   } catch (error) {
     console.error('Error fetching about data:', error);

@@ -1,28 +1,13 @@
+import { fetchHomeAbout } from '../utils/api';
 import SectionTitle from './SectionTitle'
 import Link from 'next/link'
 
 export default async function AboutUs({ bgImg, classTag, hideBtn }) {
-  let post = {
-    id: 1,
-    title: 'عنوان افتراضي',
-    sub_title: 'وصف افتراضي',
-    description: 'تفاصيل افتراضية',
-    image: '/image/logo_2.webp'
-  };
+  let post = [];
 
   try {
-    const res = await fetch('https://rewash-store.bright-ignite.com/api/home/about', { cache: 'no-store' });
-    const json = await res.json();
+    post = await fetchHomeAbout();
 
-    if (json.status && json.data) {
-      post = {
-        id: json.data.id,
-        title: json.data.title,
-        sub_title: json.data.sub_title,
-        description: json.data.description,
-        image: json.data.image
-      };
-    }
   } catch (error) {
     console.error('Error fetching about data:', error);
   }

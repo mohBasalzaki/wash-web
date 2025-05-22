@@ -1,31 +1,20 @@
 import SectionTitle from './SectionTitle'
+import { fetchHomeFeatures } from '../utils/api';
 
 export default async function Features() {
-  let post = {
-    id: null,
-    title: 'عنوان افتراضي',
-    sub_title: 'وصف افتراضي',
-    description: '',
-    image: ''
-  };
+  let post = [];
 
   let features = [];
 
   try {
-    const res = await fetch('https://rewash-store.bright-ignite.com/api/home/features', { cache: 'no-store' });
-    const json = await res.json();
+    const data = await fetchHomeFeatures();
 
-    if (json.status && json.data) {
-      post = {
-        id: json.data.id,
-        title: json.data.title,
-        sub_title: json.data.sub_title,
-        description: json.data.description,
-        image: json.data.image
-      };
+    post = data;
 
-      features = json.data.children || [];
+    if (data && Array.isArray(data.children)) {
+      features = data.children;
     }
+
   } catch (error) {
     console.error('Error fetching features data:', error);
   }

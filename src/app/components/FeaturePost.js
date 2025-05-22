@@ -1,9 +1,10 @@
 import Link from 'next/link'
 
 export default function FeaturePost({ post }) {
+
   return (
-    <Link href={`/blog/${post.slug}`} class="card text-bg-dark position-relative border-0">
-        <div class="card-img bg-img h-50vh" style={{backgroundImage: `url(${post.image})`}} alt={post.title}></div>
+    <Link href={`/blog/${post}`} class="card text-bg-dark position-relative border-0">
+        <div class="card-img bg-img h-50vh" style={{backgroundImage: `url(${"/image/about_img.svg" || post.image})`}} alt={post.title}></div>
 
         <div class="card-img-overlay p-0">
             <div class="position-absolute bottom-0 p-md-4 p-0 m-4">
