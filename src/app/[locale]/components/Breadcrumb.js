@@ -1,0 +1,24 @@
+import { useTranslations } from 'next-intl';
+import Link from 'next/link'
+
+export default function Breadcrumb({ title }) {
+const t = useTranslations('Home');
+    
+  return (
+    <section id="breadcrumb" class="pb-3">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item">
+                        <Link href={`/`} class="text-decoration-none text-body-secondary">
+                            {t('home')}
+                        </Link>
+                    </li>
+
+                    <li class="breadcrumb-item text-body" aria-current="page">{title}</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+  );
+}

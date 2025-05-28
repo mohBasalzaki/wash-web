@@ -95,11 +95,23 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
     height: 50vh;
 }
 
-.custom_line {
+[dir="rtl"] .custom_line {
     border-top-style: dashed;
     width: 790px;
     top: 160px;
     right: 98px;
+}
+
+[dir="ltr"] .custom_line {
+    border-top-style: dashed;
+    width: 790px;
+    top: 160px;
+    left: 98px;
+}
+
+.card .card-img-overlay {
+    background: #000000;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
 
 .card:hover .overlay {
@@ -139,6 +151,20 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
     right: 0;
     left: 0;
     margin: 0 auto;
+}
+
+[dir="rtl"] .promo--img {
+    width: 33vh;
+    right: auto;
+    left: 10vw;
+    bottom: 0;
+}
+
+[dir="ltr"] .promo--img {
+    width: 33vh;
+    right: 10vw;
+    left: auto;
+    bottom: 0;
 }
 
 .whatsapp {

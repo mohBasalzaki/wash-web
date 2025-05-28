@@ -6,8 +6,11 @@ const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     "Cache-Control": "application/json",
+    Accept: "application/json",
   },
 });
+
+export default axiosInstance;
 
 export async function fetchWashingPlans() {
   const res = await axiosInstance.get("/washing_plans");
@@ -96,4 +99,13 @@ export async function fetchPosts() {
     return res.data.data;
   }
   throw new Error("Failed to fetch blogs");
+}
+
+export async function submitContactForm(formData) {
+  const res = await axiosInstance.post("/api/contact-us", formData);
+  if (response.data?.status) {
+    return response.data;
+  }
+
+  throw new Error(response.data?.message || "Failed to submit contact form");
 }
