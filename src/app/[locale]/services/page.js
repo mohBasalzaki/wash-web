@@ -25,7 +25,7 @@ export default async function Services({ params }) {
       <Breadcrumb title={t('services')} />
 
       <section id="services_page" class="pb-0">
-        <div class="container" key={post.id}>
+        <div class="container" id={post.id}>
           <div class="d-block d-md-none mb-4">
             <SectionTitle title={post.title} body={post.description} />
           </div>

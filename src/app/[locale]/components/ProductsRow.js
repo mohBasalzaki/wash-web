@@ -39,7 +39,7 @@ export default function ProductsRow() {
   return (
     <>
       {products.map((product, index) => (
-        <div class="col" key={index}>
+        <div class="col" id={index}>
           <div class="card border-light-subtle p-3">
             <div class="position-relative">
               <img src={product.img} alt={product.title} class="card-img img-fluid w-100" />

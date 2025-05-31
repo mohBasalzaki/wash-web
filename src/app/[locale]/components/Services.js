@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import SectionTitle from './SectionTitle'
 import { fetchHomeServices } from "@/app/utils/api";
+import { getTranslations } from 'next-intl/server';
 
 export default async function Services() {
+  const t = await getTranslations('Home');
+
   let post = [];
 
   try {
@@ -14,14 +17,14 @@ export default async function Services() {
 
   return (
     <section id="services_section" class="py-md-5 py-3">
-      <div class="container" key={post.id}>
+      <div class="container" id={post.id}>
         <div class="row row-cols-1 row-cols-md-2 align-items-center g-4">
           <div class="col order-1 order-md-0">
             <div class="mb-4">
               <SectionTitle title={post.title} body={post.description} />
             </div>
 
-            <Link href={"/services"} class="btn btn-primary px-4">خدماتنا</Link>
+            <Link href={"/services"} class="btn btn-primary px-4">{t('read_more')}</Link>
           </div>
 
           <div class="col">

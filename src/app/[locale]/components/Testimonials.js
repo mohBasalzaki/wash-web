@@ -28,12 +28,12 @@ export default async function Testimonials() {
         
         <div class="row row-cols-1 row-cols-md-3 g-4">
           {testimonials.map((testimonial) => (
-            <div class="col" key={testimonial.id}>
+            <div class="col" id={testimonial.id}>
               <div class="card bg-body-tertiary border-0 p-md-4 p-3">
                 <div class="d-flex align-items-center mb-3">
                   <div
                     class="bg-img rounded p-4"
-                    style={{ backgroundImage: `url(${testimonial.image})` }}
+                    style={{ backgroundImage: `url(${testimonial?.image || "/image/about_img.svg"})` }}
                     alt={testimonial.title}
                   ></div>
 

@@ -60,7 +60,7 @@ export default function Footer({ post }) {
                       <Link class="nav-link p-0" href={"/pricing"}>{t('pricing')}</Link>
                       <Link class="nav-link p-0" href={"/blog"}>{t('blog')}</Link>
                       <Link class="nav-link p-0" href={"/partnerships"}>{t('partnerships')}</Link>
-                      <Link class="nav-link p-0" href={"/f&q"}>{t('f&q')}</Link>
+                      <Link class="nav-link p-0" href={"/faq"}>{t('faq')}</Link>
                     </li>
                   </ul>
                 </div>

@@ -7,6 +7,7 @@ const axiosInstance = axios.create({
   headers: {
     "Cache-Control": "application/json",
     Accept: "application/json",
+    "Accept-Language": "en",
   },
 });
 
@@ -52,13 +53,13 @@ export async function fetchHomeTestimonials() {
   throw new Error("Failed to fetch home testimonials");
 }
 
-// export async function fetchHomeFeaturesSection() {
-//   const res = await axiosInstance.get("/home/features_section");
-//   if (res.data?.status && res.data.data) {
-//     return res.data.data;
-//   }
-//   throw new Error("Failed to fetch home features section");
-// }
+export async function fetchHowItWorkSection() {
+  const res = await axiosInstance.get("/home/how_it_works");
+  if (res.data?.status && res.data.data) {
+    return res.data.data;
+  }
+  throw new Error("Failed to fetch home How It Works section");
+}
 
 export async function fetchHomeServices() {
   const res = await axiosInstance.get("/home/services");
@@ -84,6 +85,13 @@ export async function fetchInfo() {
   throw new Error("Failed to fetch info");
 }
 
+export async function fetchPosts() {
+  const res = await axiosInstance.get('/blogs');
+  if (res.data?.status && res.data.data) {
+    return res.data.data;
+  }
+  throw new Error("Failed to fetch blogs");
+}
 
 export async function fetchPartners() {
   const res = await axiosInstance.get("/partners");
@@ -93,12 +101,12 @@ export async function fetchPartners() {
   throw new Error("Failed to fetch partners");
 }
 
-export async function fetchPosts() {
-  const res = await axiosInstance.get('/blogs');
+export async function fetchFaq() {
+  const res = await axiosInstance.get("/pages/FAQ");
   if (res.data?.status && res.data.data) {
     return res.data.data;
   }
-  throw new Error("Failed to fetch blogs");
+  throw new Error("Failed to fetch FAQ section");
 }
 
 export async function submitContactForm(formData) {

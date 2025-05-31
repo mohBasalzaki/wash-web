@@ -16,7 +16,7 @@ export default async function ServicesCard() {
   return (
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {services.map((service) => (
-          <div class="col mb-md-5 mb-0" key={service.id}>
+          <div class="col mb-md-5 mb-0" id={service.id}>
               <div class="card bg-body-tertiary text-center position-relative border-0 p-md-4 p-3">
                   <img src={service.image} class="service_card_img d-none d-md-block position-absolute" width={80} alt={service.title} />
                   <img src={service.image} class="service_card_img d-md-none" width={80} alt={service.title} />

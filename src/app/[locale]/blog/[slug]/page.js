@@ -1,42 +1,31 @@
 import { fetchPosts } from "@/app/utils/api";
 import Link from "next/link";
+import { getTranslations } from 'next-intl/server';
+import { generatePageMetadata } from "../../components/PageMetadata";
 
 export async function generateMetadata({ params }) {
-  let posts = [];
-
-    try {
-      posts = await fetchPosts();
-    
-    } catch (error) {
-      console.error('Error fetching Blogs data:', error);
-    }
-
-  const matchedPost = posts.find((p) => p.slug === params.slug);
-
-  if (matchedPost) {
-    return {
-      title: `ريواش | ${matchedPost.title}`,
-      description: matchedPost.description,
-    };
-  }
-
-  return {
-    title: "ريواش | المقال غير موجود",
-    description: "لم يتم العثور على المقال المطلوب",
-  };
+  return await generatePageMetadata({ params, namespace: 'Home', key: 'blog' });
 }
 
 export default async function BlogPostPage({ params }) {
-  let posts = [];
+  const t = await getTranslations('Home');
 
-    try {
-      posts = await fetchPosts();
-    
-    } catch (error) {
-      console.error('Error fetching Blogs data:', error);
-    };
+  let posts = [];
+  try {
+    posts = await fetchPosts();
+  } catch (error) {
+    console.error('Error fetching Blogs data:', error);
+  }
 
   const post = posts.find((p) => p.slug === params.slug);
+
+  if (!post) {
+    return (
+      <div class="container py-5">
+        <h1>{t('blog_not_found')}</h1>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -46,16 +35,14 @@ export default async function BlogPostPage({ params }) {
             <ol class="breadcrumb m-0">
               <li class="breadcrumb-item">
                 <Link href="/" class="text-decoration-none text-body-secondary">
-                  الرئيسية
+                  {t('home')}
                 </Link>
               </li>
-
               <li class="breadcrumb-item">
                 <Link href="/blog" class="text-decoration-none text-body-secondary">
-                  المدونة
+                  {t('blog')}
                 </Link>
               </li>
-
               <li class="breadcrumb-item text-body" aria-current="page">
                 {post.title}
               </li>
@@ -75,10 +62,11 @@ export default async function BlogPostPage({ params }) {
           <div class="section_content mb-0">
             <div class="section_title">
               <h1 class="fw-bold fs-3 mb-1 mt-0">{post.title}</h1>
-                <div
-                    class="text-justify text-body mt-3"
-                    dangerouslySetInnerHTML={{ __html: post.description }}
-                ></div>
+
+              <div
+                class="text-justify text-body mt-3"
+                dangerouslySetInnerHTML={{ __html: post.description }}
+              ></div>
             </div>
           </div>
         </div>

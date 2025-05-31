@@ -9,10 +9,15 @@
     "partnerships": "Partnerships",
     "contact": "Contact",
     "booking": "Booking",
+    "mostPopular": "Most Popular",
+    "read_more": "Read More",
     "download_app": "Download the App",
     "quick_links": "Quick Links",
     "contact_info": "Contact Information",
-    "f&q": "F & Q",
+    "order_now": "Order Now",
+    "faq": "FAQ",
+    "faq_subtitle": "Answers to the most frequently asked questions about Rewash.",
+    "washing_time": "Number of Washing Times",
     "copy_right": "All Rights Reserved to"
   }
 }

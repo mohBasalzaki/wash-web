@@ -15,7 +15,7 @@ export default async function AppPromotion() {
 
   return (
     <section id="promo_section" class="py-md-5 py-3 mt-auto mt-md-5">
-      <div class="container" key={post.id}>
+      <div class="container" id={post.id}>
         <div class="card text-bg-primary border-0 position-relative p-md-5 p-4">
           <div class="row row-cols-1 row-cols-md-2 g-0">
             <div class="col d-md-none text-center">

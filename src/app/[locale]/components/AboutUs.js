@@ -1,8 +1,11 @@
 import { fetchHomeAbout } from "@/app/utils/api";
 import SectionTitle from './SectionTitle'
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server';
 
 export default async function AboutUs({ bgImg, classTag, hideBtn }) {
+  const t = await getTranslations('Home');
+
   let post = [];
 
   try {
@@ -14,7 +17,7 @@ export default async function AboutUs({ bgImg, classTag, hideBtn }) {
 
   return (
     <section id="about_section" class="py-md-5 py-3">
-      <div class="container" key={post.id}>
+      <div class="container" id={post.id}>
         <div class="row row-cols-1 row-cols-md-2 align-items-center g-4">
           <div class="col">
             <div class="card h-50vh bg-img bg-primary border-0 p-5" style={{ backgroundImage: `url(${bgImg})` }}>
@@ -31,7 +34,7 @@ export default async function AboutUs({ bgImg, classTag, hideBtn }) {
             <div class="mb-4">
               <SectionTitle title={post.title} body={post.description} />
             </div>
-            <Link href={"/about"} class={`btn btn-primary px-4 ${hideBtn}`}>قراءة المزيد</Link>
+            <Link href={"/about"} class={`btn btn-primary px-4 ${hideBtn}`}>{t('read_more')}</Link>
           </div>
         </div>
       </div>

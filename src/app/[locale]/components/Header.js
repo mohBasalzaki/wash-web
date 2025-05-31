@@ -66,7 +66,7 @@ export default function Heade({ post }) {
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-center flex-grow-1 mb-md-0 mb-3">
                 {navItems.map(({ label, href, match }, index) => (
-                  <li class="nav-item" key={index}>
+                  <li class="nav-item" id={index}>
                     <Link
                       href={href}
                       class={`nav-link${pathname === `/${locale}${match}` ? ' active' : ''}`}
