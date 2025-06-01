@@ -1,10 +1,10 @@
 import { fetchHomeServices } from "@/app/utils/api";
 
-export default async function ServicesCard() {
+export default async function ServicesCard({ locale }) {
   let services = [];
 
   try {
-    const data = await fetchHomeServices()
+    const data = await fetchHomeServices(locale)
 
     if (data && Array.isArray(data.children)) {
       services = data.children;

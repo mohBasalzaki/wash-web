@@ -1,13 +1,13 @@
 import SectionTitle from './SectionTitle'
 import { fetchHomeFeatures } from "@/app/utils/api";
 
-export default async function Features() {
+export default async function Features({ locale }) {
   let post = [];
 
   let features = [];
 
   try {
-    const data = await fetchHomeFeatures();
+    const data = await fetchHomeFeatures(locale);
 
     post = data;
 

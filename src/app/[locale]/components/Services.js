@@ -3,13 +3,13 @@ import SectionTitle from './SectionTitle'
 import { fetchHomeServices } from "@/app/utils/api";
 import { getTranslations } from 'next-intl/server';
 
-export default async function Services() {
-  const t = await getTranslations('Home');
+export default async function Services({ locale }) {
+  const t = await getTranslations('Home', { locale });
 
   let post = [];
 
   try {
-    post = await fetchHomeServices();
+    post = await fetchHomeServices(locale);
     
   } catch (error) {
     console.error('Error fetching services data:', error);
@@ -24,11 +24,11 @@ export default async function Services() {
               <SectionTitle title={post.title} body={post.description} />
             </div>
 
-            <Link href={"/services"} class="btn btn-primary px-4">{t('read_more')}</Link>
+            <Link href={`/${locale}/services`} class="btn btn-primary px-4">{t('read_more')}</Link>
           </div>
 
           <div class="col">
-            <div class="card h-50vh bg-img border-0 p-5" style={{backgroundImage: `url(${"/image/services_img.svg" || post.image})`}}></div>
+            <div class="card h-50vh bg-img border-0 p-5" style={{backgroundImage: `url(${post?.image || "/image/services_img.svg"})`}}></div>
           </div>
         </div>
       </div>

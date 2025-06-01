@@ -2,13 +2,13 @@ import BookingButton from './BookingButton'
 import { fetchWashingPlans } from "@/app/utils/api";
 import { getTranslations } from 'next-intl/server';
 
-export default async function PricingRow({ limit = null }) {
-  const t = await getTranslations('Home');
+export default async function PricingRow({ locale, limit = null }) {
+  const t = await getTranslations('Home', { locale });
 
   let plans = [];
 
   try {
-    const data = await fetchWashingPlans();
+    const data = await fetchWashingPlans(locale);
 
     if (Array.isArray(data)) {
       plans = data;

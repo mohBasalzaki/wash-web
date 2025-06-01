@@ -1,13 +1,13 @@
 import { fetchHowItWorkSection } from '@/app/utils/api';
 import SectionTitle from './SectionTitle'
 
-export default async function HowItWorks() {
+export default async function HowItWorks({ locale }) {
   let post = [];
   
   let steps = [];
 
   try {
-    const data = await fetchHowItWorkSection();
+    const data = await fetchHowItWorkSection(locale);
 
     post = data;
 

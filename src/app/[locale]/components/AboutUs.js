@@ -3,13 +3,13 @@ import SectionTitle from './SectionTitle'
 import Link from 'next/link'
 import { getTranslations } from 'next-intl/server';
 
-export default async function AboutUs({ bgImg, classTag, hideBtn }) {
-  const t = await getTranslations('Home');
+export default async function AboutUs({ locale, bgImg, classTag, hideBtn }) {
+  const t = await getTranslations('Home', { locale });
 
   let post = [];
 
   try {
-    post = await fetchHomeAbout();
+    post = await fetchHomeAbout(locale);
 
   } catch (error) {
     console.error('Error fetching about data:', error);
@@ -34,7 +34,7 @@ export default async function AboutUs({ bgImg, classTag, hideBtn }) {
             <div class="mb-4">
               <SectionTitle title={post.title} body={post.description} />
             </div>
-            <Link href={"/about"} class={`btn btn-primary px-4 ${hideBtn}`}>{t('read_more')}</Link>
+            <Link href={`/${locale}/about`} class={`btn btn-primary px-4 ${hideBtn}`}>{t('read_more')}</Link>
           </div>
         </div>
       </div>

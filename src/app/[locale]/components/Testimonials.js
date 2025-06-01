@@ -1,13 +1,13 @@
 import SectionTitle from './SectionTitle'
 import { fetchHomeTestimonials } from "@/app/utils/api";
 
-export default async function Testimonials() {
+export default async function Testimonials({ locale }) {
   let post = [];
 
   let testimonials = [];
 
   try {
-    const data = await fetchHomeTestimonials();
+    const data = await fetchHomeTestimonials(locale);
 
     post = data;
 

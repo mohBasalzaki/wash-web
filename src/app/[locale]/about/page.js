@@ -11,16 +11,20 @@ export async function generateMetadata({ params }) {
   return await generatePageMetadata({ params, namespace: 'Home', key: 'about' });
 }
 
-export default function About() {
+export default function About({ params }) {
   const t = useTranslations('Home');
 
   return (
     <>
       <Breadcrumb title={t('about')} />
-      <Content />
-      <AboutUs bgImg={"../image/clement-m-Ng3xrviPrhk-unsplash.png"} hideBtn={"d-none"} />
-      <Features />
-      <Services />
+      <Content locale={params.locale} />
+      <AboutUs
+        locale={params.locale}
+        bgImg={"../image/clement-m-Ng3xrviPrhk-unsplash.png"}
+        hideBtn={"d-none"}
+      />
+      <Features locale={params.locale} />
+      <Services locale={params.locale} />
     </>
   );
 }

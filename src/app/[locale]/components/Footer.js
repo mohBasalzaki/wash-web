@@ -1,8 +1,10 @@
-import { useTranslations } from 'next-intl';
 import Link from 'next/link'
+import { useTranslations, useLocale } from "next-intl"
 
 export default function Footer({ post }) {
   const t = useTranslations('Home');
+
+  const locale = useLocale();
   
   const cleanedPhone = post.phone.startsWith("00")
     ? post.phone.slice(2)
@@ -46,10 +48,10 @@ export default function Footer({ post }) {
                 <div class="col">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <Link class="nav-link p-0" href={"/"}>{t('home')}</Link>
-                      <Link class="nav-link p-0" href={"/about"}>{t('about')}</Link>
-                      <Link class="nav-link p-0" href={"/services"}>{t('services')}</Link>
-                      <Link class="nav-link p-0" href={"/store"}>{t('store')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/`}>{t('home')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/about`}>{t('about')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/services`}>{t('services')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/store`}>{t('store')}</Link>
                     </li>
                   </ul>
                 </div>
@@ -57,10 +59,10 @@ export default function Footer({ post }) {
                 <div class="col">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <Link class="nav-link p-0" href={"/pricing"}>{t('pricing')}</Link>
-                      <Link class="nav-link p-0" href={"/blog"}>{t('blog')}</Link>
-                      <Link class="nav-link p-0" href={"/partnerships"}>{t('partnerships')}</Link>
-                      <Link class="nav-link p-0" href={"/faq"}>{t('faq')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/pricing`}>{t('pricing')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/blog`}>{t('blog')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/partnerships`}>{t('partnerships')}</Link>
+                      <Link class="nav-link p-0" href={`/${locale}/faq`}>{t('faq')}</Link>
                     </li>
                   </ul>
                 </div>

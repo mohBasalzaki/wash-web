@@ -1,11 +1,11 @@
 import SectionTitle from './SectionTitle'
 import { fetchHomeAbout } from "@/app/utils/api";
 
-export default async function Content() {
+export default async function Content({ locale }) {
   let post = null;
 
   try {
-    const data = await fetchHomeAbout();
+    const data = await fetchHomeAbout(locale);
 
     if (data && Array.isArray(data.children)) {
       post = data.children.find(child => child.id === 12);

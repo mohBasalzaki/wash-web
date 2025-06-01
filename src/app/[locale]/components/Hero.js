@@ -2,13 +2,13 @@ import Link from 'next/link'
 import { fetchHomeHero } from "@/app/utils/api";
 import { getTranslations } from 'next-intl/server';
 
-export default async function Hero() {
-  const t = await getTranslations('Home');
+export default async function Hero({ locale }) {
+  const t = await getTranslations('Home', { locale });
 
   let post = [];
 
   try {
-    post = await fetchHomeHero();
+    post = await fetchHomeHero(locale);
 
   } catch (error) {
     console.error('Error fetching hero data:', error);
@@ -27,14 +27,14 @@ export default async function Hero() {
             </div>
 
             <div class="d-flex justify-content-center justify-content-md-start">
-              <Link href={"#pricing-section"} class="btn btn-primary px-4 ms-2">{t('booking')}</Link>
+              <Link href={`/${locale}/#pricing-section`} class="btn btn-primary px-4 ms-2">{t('booking')}</Link>
 
-              <Link href="#promo_section" class="btn btn-outline-primary px-4 ms-2">{t('download_app')}</Link>
+              <Link href={`/${locale}/#promo_section`} class="btn btn-outline-primary px-4 ms-2">{t('download_app')}</Link>
             </div>
           </div>
 
           <div class="col text-center">
-            <img src={post.image || "/image/mobile_1.webp"} class="w-100" loading="lazy" alt="" />
+            <img src={post?.image || "/image/mobile_1.webp"} class="w-100" loading="lazy" alt="" />
           </div>
         </div>
       </div>

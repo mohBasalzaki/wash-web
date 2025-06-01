@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { fetchHomePromo } from "@/app/utils/api";
 
-export default async function AppPromotion() {
+export default async function AppPromotion({ locale }) {
   let post = [];
 
   try {
-    const data = await fetchHomePromo();
+    const data = await fetchHomePromo(locale);
 
     post = data;
     
@@ -19,7 +19,7 @@ export default async function AppPromotion() {
         <div class="card text-bg-primary border-0 position-relative p-md-5 p-4">
           <div class="row row-cols-1 row-cols-md-2 g-0">
             <div class="col d-md-none text-center">
-              <img src={"/image/mobile_1.webp" || post.image} class="w-100" loading="lazy" alt={post.title} />
+              <img src={post?.image || "/image/mobile_1.webp"} class="w-100" loading="lazy" alt={post.title} />
             </div>
 
             <div class="col">

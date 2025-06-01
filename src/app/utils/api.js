@@ -2,18 +2,19 @@ import axios from "axios";
 
 const API_BASE_URL = "https://rewash-store.bright-ignite.com/api";
 
-const axiosInstance = axios.create({
-  baseURL: API_BASE_URL,
-  headers: {
-    "Cache-Control": "application/json",
-    Accept: "application/json",
-    "Accept-Language": "en",
-  },
-});
+function getAxiosInstance(locale = "ar") {
+  return axios.create({
+    baseURL: API_BASE_URL,
+    headers: {
+      "Cache-Control": "no-cache",
+      Accept: "application/json",
+      "Accept-Language": locale,
+    },
+  });
+}
 
-export default axiosInstance;
-
-export async function fetchWashingPlans() {
+export async function fetchWashingPlans(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/washing_plans");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -21,7 +22,8 @@ export async function fetchWashingPlans() {
   throw new Error("Failed to fetch washing plans");
 }
 
-export async function fetchHomeHero() {
+export async function fetchHomeHero(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/hero");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -29,7 +31,8 @@ export async function fetchHomeHero() {
   throw new Error("Failed to fetch home hero");
 }
 
-export async function fetchHomeFeatures() {
+export async function fetchHomeFeatures(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/features");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -37,7 +40,8 @@ export async function fetchHomeFeatures() {
   throw new Error("Failed to fetch home features");
 }
 
-export async function fetchHomeAbout() {
+export async function fetchHomeAbout(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/about");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -45,7 +49,8 @@ export async function fetchHomeAbout() {
   throw new Error("Failed to fetch home about");
 }
 
-export async function fetchHomeTestimonials() {
+export async function fetchHomeTestimonials(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/testimonials");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -53,7 +58,8 @@ export async function fetchHomeTestimonials() {
   throw new Error("Failed to fetch home testimonials");
 }
 
-export async function fetchHowItWorkSection() {
+export async function fetchHowItWorkSection(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/how_it_works");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -61,7 +67,8 @@ export async function fetchHowItWorkSection() {
   throw new Error("Failed to fetch home How It Works section");
 }
 
-export async function fetchHomeServices() {
+export async function fetchHomeServices(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/services");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -69,7 +76,8 @@ export async function fetchHomeServices() {
   throw new Error("Failed to fetch home services");
 }
 
-export async function fetchHomePromo() {
+export async function fetchHomePromo(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/home/promo");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -77,7 +85,8 @@ export async function fetchHomePromo() {
   throw new Error("Failed to fetch home promo");
 }
 
-export async function fetchInfo() {
+export async function fetchInfo(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/info");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -85,15 +94,17 @@ export async function fetchInfo() {
   throw new Error("Failed to fetch info");
 }
 
-export async function fetchPosts() {
-  const res = await axiosInstance.get('/blogs');
+export async function fetchPosts(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
+  const res = await axiosInstance.get("/blogs");
   if (res.data?.status && res.data.data) {
     return res.data.data;
   }
   throw new Error("Failed to fetch blogs");
 }
 
-export async function fetchPartners() {
+export async function fetchPartners(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/partners");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -101,7 +112,8 @@ export async function fetchPartners() {
   throw new Error("Failed to fetch partners");
 }
 
-export async function fetchFaq() {
+export async function fetchFaq(locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
   const res = await axiosInstance.get("/pages/FAQ");
   if (res.data?.status && res.data.data) {
     return res.data.data;
@@ -109,11 +121,11 @@ export async function fetchFaq() {
   throw new Error("Failed to fetch FAQ section");
 }
 
-export async function submitContactForm(formData) {
-  const res = await axiosInstance.post("/api/contact-us", formData);
-  if (response.data?.status) {
-    return response.data;
+export async function submitContactForm(formData, locale = "ar") {
+  const axiosInstance = getAxiosInstance(locale);
+  const res = await axiosInstance.post("/contact-us", formData);
+  if (res.data?.status) {
+    return res.data;
   }
-
-  throw new Error(response.data?.message || "Failed to submit contact form");
+  throw new Error(res.data?.message || "Failed to submit contact form");
 }

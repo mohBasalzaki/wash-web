@@ -10,12 +10,15 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function Services({ params }) {
-  const t = await getTranslations({ locale: params.locale, namespace: 'Home' });
+  const locale = params.locale;
 
-  let post = [];
+  const t = await getTranslations('Home', { locale });
+
+  let post = {};
 
   try {
-    post = await fetchHomeServices();
+    post = await fetchHomeServices(locale);
+    
   } catch (error) {
     console.error('Error fetching services data:', error);
   }
@@ -36,7 +39,7 @@ export default async function Services({ params }) {
 
           <div class="service_card pt-0 my-4 my-md-0">
             <div class="px-md-5 px-0">
-              <ServicesCard />
+              <ServicesCard locale={locale} />
             </div>
           </div>
         </div>
