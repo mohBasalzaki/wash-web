@@ -20,18 +20,18 @@ export default async function Features({ locale }) {
   }
 
   return (
-    <section id="features" class="py-md-5 py-3">
-      <div class="container" id={post.id}>
-        <div class="mb-md-5 mb-4">
+    <section id="features" className="py-md-5 py-3">
+      <div className="container" id={post.id}>
+        <div className="mb-md-5 mb-4">
           <SectionTitle title={post.title} body={post.sub_title} />
         </div>
         
-        <div class="row row-cols-2 row-cols-md-4 g-4">
+        <div className="row row-cols-2 row-cols-md-4 g-4">
           {features.map((feature) => (
-            <div class="col" id={feature.id}>
-              <img src={feature.image} width="80" loading="lazy" class="mb-3" alt={feature.title} />
-              <h2 class="fw-bold fs-5">{feature.title}</h2>
-              <p class="text-justify text-body-secondary m-0">{feature.description}</p>
+            <div className="col" id={feature.id}>
+              <img src={feature.image} width="80" loading="lazy" className="mb-3" alt={feature.title} />
+              <h2 className="fw-bold fs-5">{feature.title}</h2>
+              <p className="text-justify text-body-secondary m-0">{feature.description}</p>
             </div>
           ))}
         </div>

@@ -31,18 +31,18 @@ export default async function FAQ({ params }) {
     <>
       <Breadcrumb title={t('faq')} />
 
-      <section id="faq_page" class="pb-4">
-        <div class="container">
-          <div class="mb-4">
+      <section id="faq_page" className="pb-4">
+        <div className="container">
+          <div className="mb-4">
             <SectionTitle title={t('faq')} body={t('faq_subtitle')} />
           </div>
 
-          <div class="accordion" id="accordionExample">
+          <div className="accordion" id="accordionExample">
             {accordions.map((accordion, index) => (
-              <div key={index} class="accordion-item bg-body-tertiary rounded border-0 mb-3">
-                <h2 class="accordion-header" id={`heading-${index}`}>
+              <div key={index} className="accordion-item bg-body-tertiary rounded border-0 mb-3">
+                <h2 className="accordion-header" id={`heading-${index}`}>
                   <button
-                    class="accordion-button bg-body-tertiary rounded shadow-none collapsed"
+                    className="accordion-button bg-body-tertiary rounded shadow-none collapsed"
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#collapse-${index}`}
@@ -55,12 +55,12 @@ export default async function FAQ({ params }) {
 
                 <div
                   id={`collapse-${index}`}
-                  class="accordion-collapse collapse bg-body-tertiary rounded-bottom"
+                  className="accordion-collapse collapse bg-body-tertiary rounded-bottom"
                   aria-labelledby={`heading-${index}`}
                   data-bs-parent="#accordionExample"
                 >
-                  <div class="accordion-body pt-0">
-                    <small class="text-body-secondary m-0">{accordion.description}</small>
+                  <div className="accordion-body pt-0">
+                    <small className="text-body-secondary m-0">{accordion.description}</small>
                   </div>
                 </div>
               </div>

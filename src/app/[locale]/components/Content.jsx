@@ -15,9 +15,9 @@ export default async function Content({ locale }) {
   }
 
   return (
-    <section id="content" class="pb-md-5 pb-3">
-        <div class="container">
-            <div class="section_content mb-0">
+    <section id="content" className="pb-md-5 pb-3">
+        <div className="container">
+            <div className="section_content mb-0">
                 <SectionTitle title={post.title} body={post.description} />
             </div>
         </div>

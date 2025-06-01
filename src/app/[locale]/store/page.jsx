@@ -12,13 +12,13 @@ export default function Store() {
     <>
       <Breadcrumb title={"المتجر"} />
 
-      <section id="store_page" class="pb-md-5 pb-3">
-        <div class="container">
-          <div class="mb-4">
+      <section id="store_page" className="pb-md-5 pb-3">
+        <div className="container">
+          <div className="mb-4">
             <SectionTitle title={"اكتشف منتجات ريواش"} body={"اشترِ منتجات العناية بالسيارة التي نستخدمها في خدماتنا."} />
           </div>
           
-          <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div className="row row-cols-1 row-cols-md-4 g-4">
             <ProductsRow />
           </div>
         </div>

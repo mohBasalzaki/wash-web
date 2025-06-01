@@ -15,13 +15,13 @@ export default function Pricing() {
         <>
             <Breadcrumb title={t('pricing')} />
     
-            <section id="pricing_page" class="pb-md-5 pb-3">
-                <div class="container">
-                    <div class="mb-4">
+            <section id="pricing_page" className="pb-md-5 pb-3">
+                <div className="container">
+                    <div className="mb-4">
                         <SectionTitle title={"اكتشف باقات ريواش"} body={"إختر الباقة المناسبة للعناية بسيارتك."} />
                     </div>
                     
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="row row-cols-1 row-cols-md-3 g-4">
                         <PricingRow />
                     </div>
                 </div>

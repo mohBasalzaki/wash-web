@@ -13,15 +13,15 @@ export default function Partnerships() {
     <>
       <Breadcrumb title={"الشراكات"} />
 
-      <section id="partnerships_page" class="pb-md-5 pb-3">
-        <div class="container">
-          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
+      <section id="partnerships_page" className="pb-md-5 pb-3">
+        <div className="container">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4">
             <SectionTitle title={"اكتشف جميع شركائنا"} body={"تعرف على الشركات التي وثقت بريواش وشاركتنا النجاح"} />
 
-            <button type="button" class="btn btn-outline-primary px-4 mt-md-0 mt-3" data-bs-toggle="modal" data-bs-target="#request_modal">طلب شراكة</button>
+            <button type="button" className="btn btn-outline-primary px-4 mt-md-0 mt-3" data-bs-toggle="modal" data-bs-target="#request_modal">طلب شراكة</button>
           </div>
           
-          <div class="row row-cols-2 row-cols-md-5 g-4">
+          <div className="row row-cols-2 row-cols-md-5 g-4">
             <PartnersLogo />
           </div>
         </div>

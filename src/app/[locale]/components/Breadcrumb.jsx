@@ -5,17 +5,17 @@ export default function Breadcrumb({ title }) {
 const t = useTranslations('Home');
     
   return (
-    <section id="breadcrumb" class="pb-3">
-        <div class="container">
+    <section id="breadcrumb" className="pb-3">
+        <div className="container">
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item">
-                        <Link href={`/`} class="text-decoration-none text-body-secondary">
+                <ol className="breadcrumb m-0">
+                    <li className="breadcrumb-item">
+                        <Link href={`/`} className="text-decoration-none text-body-secondary">
                             {t('home')}
                         </Link>
                     </li>
 
-                    <li class="breadcrumb-item text-body" aria-current="page">{title}</li>
+                    <li className="breadcrumb-item text-body" aria-current="page">{title}</li>
                 </ol>
             </nav>
         </div>

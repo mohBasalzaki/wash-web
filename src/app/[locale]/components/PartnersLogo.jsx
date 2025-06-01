@@ -13,9 +13,9 @@ export default async function PartnersLogo() {
     return (
         <>
             {logos.map((logo, index) => (
-                <div id={index} class="col">
-                    <div class="border border-2 border-light-subtle rounded p-md-4 p-3">
-                        <img class="w-100" src={logo} alt={`partner-logo-${index}`} />
+                <div id={index} className="col">
+                    <div className="border border-2 border-light-subtle rounded p-md-4 p-3">
+                        <img className="w-100" src={logo} alt={`partner-logo-${index}`} />
                     </div>
                 </div>
             ))}

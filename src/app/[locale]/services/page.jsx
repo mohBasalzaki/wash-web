@@ -27,18 +27,18 @@ export default async function Services({ params }) {
     <>
       <Breadcrumb title={t('services')} />
 
-      <section id="services_page" class="pb-0">
-        <div class="container" id={post.id}>
-          <div class="d-block d-md-none mb-4">
+      <section id="services_page" className="pb-0">
+        <div className="container" id={post.id}>
+          <div className="d-block d-md-none mb-4">
             <SectionTitle title={post.title} body={post.description} />
           </div>
 
-          <div class="card h-50vh d-none d-md-flex justify-content-center bg-img text-bg-dark border-0 p-5" style={{ backgroundImage: "url('/image/jan-kopriva-sh_7sFEFICI-unsplash.png')" }}>
+          <div className="card h-50vh d-none d-md-flex justify-content-center bg-img text-bg-dark border-0 p-5" style={{ backgroundImage: "url('/image/jan-kopriva-sh_7sFEFICI-unsplash.png')" }}>
             <SectionTitle title={post.title} />
           </div>
 
-          <div class="service_card pt-0 my-4 my-md-0">
-            <div class="px-md-5 px-0">
+          <div className="service_card pt-0 my-4 my-md-0">
+            <div className="px-md-5 px-0">
               <ServicesCard locale={locale} />
             </div>
           </div>

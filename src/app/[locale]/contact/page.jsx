@@ -12,13 +12,13 @@ export default function Contact() {
     <>
       <Breadcrumb title={"تواصل معنا"} />
 
-      <section id="contact_page" class="pb-4">
-        <div class="container">
-          <div class="row row-cols-1 row-cols-md-2 g-md-4 g-3">
+      <section id="contact_page" className="pb-4">
+        <div className="container">
+          <div className="row row-cols-1 row-cols-md-2 g-md-4 g-3">
             <ContactForm />
 
-            <div class="col bg-img d-flex flex-column justify-content-center text-bg-dark border-0 rounded p-md-4 p-5" style={{backgroundImage: `url("/image/mintosko-V4b2j7f1dfc-unsplash.png")`}}>
-              <div class="mx-auto">
+            <div className="col bg-img d-flex flex-column justify-content-center text-bg-dark border-0 rounded p-md-4 p-5" style={{backgroundImage: `url("/image/mintosko-V4b2j7f1dfc-unsplash.png")`}}>
+              <div className="mx-auto">
                 <ContactCTA />
               </div>
             </div>

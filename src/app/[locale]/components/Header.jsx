@@ -43,33 +43,33 @@ export default function Heade({ post }) {
 
   return (
     <header>
-      <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
-        <div class="container">
-          <Link class="navbar-brand" href={`/${locale}/`}>
+      <nav className="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
+        <div className="container">
+          <Link className="navbar-brand" href={`/${locale}/`}>
             <Image src="/image/logo.svg" width={120} height={50} title={post.site_name} alt={post.site_name} />
           </Link>
 
-          <button class="navbar-toggler shadow-none border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
-            <i class="ti ti-menu-3 text-black fs-2"></i>
+          <button className="navbar-toggler shadow-none border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
+            <i className="ti ti-menu-3 text-black fs-2"></i>
           </button>
 
-          <div class="offcanvas offcanvas-end border-0" style={{ width: `90vw` }} tabIndex={-1} id="offcanvasNavbar2" aria-labelledby="offcanvas_navbar_meun">
-            <div class="offcanvas-header">
-              <div class="offcanvas-title" id="offcanvas_navbar_meun">
+          <div className="offcanvas offcanvas-end border-0" style={{ width: `90vw` }} tabIndex={-1} id="offcanvasNavbar2" aria-labelledby="offcanvas_navbar_meun">
+            <div className="offcanvas-header">
+              <div className="offcanvas-title" id="offcanvas_navbar_meun">
                 <Image src="/image/logo.svg" width={100} height={40} title={post.site_name} alt={post.site_name} />
               </div>
-              <button type="button" class="btn shadow-none border-0 ms-auto p-0" data-bs-dismiss="offcanvas" aria-label="Close">
-                <i class="ti ti-x text-black fs-5"></i>
+              <button type="button" className="btn shadow-none border-0 ms-auto p-0" data-bs-dismiss="offcanvas" aria-label="Close">
+                <i className="ti ti-x text-black fs-5"></i>
               </button>
             </div>
 
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-center flex-grow-1 mb-md-0 mb-3">
+            <div className="offcanvas-body">
+              <ul className="navbar-nav justify-content-center flex-grow-1 mb-md-0 mb-3">
                 {navItems.map(({ label, href, match }, index) => (
-                  <li class="nav-item" key={index}>
+                  <li className="nav-item" key={index}>
                     <Link
                       href={href}
-                      class={`nav-link${pathname === `/${locale}${match}` ? ' active' : ''}`}
+                      className={`nav-link${pathname === `/${locale}${match}` ? ' active' : ''}`}
                     >
                       {label}
                     </Link>
@@ -79,8 +79,8 @@ export default function Heade({ post }) {
 
               <SwitchLang />
 
-              <Link href={`/${locale}/contact`} class="btn btn-outline-primary px-4 mx-md-3 me-3">{t('contact')}</Link>
-              <Link href={`/${locale}/pricing`} class="btn btn-primary px-4">{t('booking')}</Link>
+              <Link href={`/${locale}/contact`} className="btn btn-outline-primary px-4 mx-md-3 me-3">{t('contact')}</Link>
+              <Link href={`/${locale}/pricing`} className="btn btn-primary px-4">{t('booking')}</Link>
             </div>
           </div>
         </div>
