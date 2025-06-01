@@ -8,14 +8,15 @@ export async function generateMetadata({ params }) {
   return await generatePageMetadata({ params, namespace: 'Home', key: 'faq' });
 }
 
-export default async function FAQ() {
-  const t = await getTranslations('Home');
+export default async function FAQ({ params }) {
+  const locale = params.locale;
+  const t = await getTranslations('Home', { locale });
 
   let post = {};
   let accordions = [];
 
   try {
-    const data = await fetchFaq();
+    const data = await fetchFaq(locale);
 
     if (Array.isArray(data) && data.length > 0) {
       post = data[0];
@@ -38,7 +39,7 @@ export default async function FAQ() {
 
           <div class="accordion" id="accordionExample">
             {accordions.map((accordion, index) => (
-              <div id={accordion.id} class="accordion-item bg-body-tertiary rounded border-0 mb-3">
+              <div key={index} class="accordion-item bg-body-tertiary rounded border-0 mb-3">
                 <h2 class="accordion-header" id={`heading-${index}`}>
                   <button
                     class="accordion-button bg-body-tertiary rounded shadow-none collapsed"
@@ -59,7 +60,7 @@ export default async function FAQ() {
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body pt-0">
-                    <p class="text-body-secondary m-0">{accordion.description}</p>
+                    <small class="text-body-secondary m-0">{accordion.description}</small>
                   </div>
                 </div>
               </div>

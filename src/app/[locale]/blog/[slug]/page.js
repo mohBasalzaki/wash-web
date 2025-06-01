@@ -8,20 +8,21 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPostPage({ params }) {
+  const { locale, slug } = params;
   const t = await getTranslations('Home');
 
   let posts = [];
   try {
-    posts = await fetchPosts();
+    posts = await fetchPosts(locale);
   } catch (error) {
     console.error('Error fetching Blogs data:', error);
   }
 
-  const post = posts.find((p) => p.slug === params.slug);
+  const post = posts.find((p) => p.slug === slug);
 
   if (!post) {
     return (
-      <div class="container py-5">
+      <div className="container py-5">
         <h1>{t('blog_not_found')}</h1>
       </div>
     );
@@ -29,21 +30,21 @@ export default async function BlogPostPage({ params }) {
 
   return (
     <>
-      <section id="breadcrumb" class="pb-3">
-        <div class="container">
+      <section id="breadcrumb" className="pb-3">
+        <div className="container">
           <nav aria-label="breadcrumb">
-            <ol class="breadcrumb m-0">
-              <li class="breadcrumb-item">
-                <Link href="/" class="text-decoration-none text-body-secondary">
+            <ol className="breadcrumb m-0">
+              <li className="breadcrumb-item">
+                <Link href={`/${locale}`} className="text-decoration-none text-body-secondary">
                   {t('home')}
                 </Link>
               </li>
-              <li class="breadcrumb-item">
-                <Link href="/blog" class="text-decoration-none text-body-secondary">
+              <li className="breadcrumb-item">
+                <Link href={`/${locale}/blog`} className="text-decoration-none text-body-secondary">
                   {t('blog')}
                 </Link>
               </li>
-              <li class="breadcrumb-item text-body" aria-current="page">
+              <li className="breadcrumb-item text-body" aria-current="page">
                 {post.title}
               </li>
             </ol>
@@ -51,20 +52,21 @@ export default async function BlogPostPage({ params }) {
         </div>
       </section>
 
-      <section id="blog_page" class="pb-4">
-        <div class="container">
+      <section id="blog_page" className="pb-4">
+        <div className="container">
           <div
-            class="bg-img h-50vh rounded mb-md-4 mb-3"
+            className="bg-img h-50vh rounded mb-md-4 mb-3"
             style={{ backgroundImage: `url(${post?.image || "/image/about_img.svg"})` }}
-            alt={post.title}
+            role="img"
+            aria-label={post.title}
           ></div>
 
-          <div class="section_content mb-0">
-            <div class="section_title">
-              <h1 class="fw-bold fs-3 mb-1 mt-0">{post.title}</h1>
+          <div className="section_content mb-0">
+            <div className="section_title">
+              <h1 className="fw-bold fs-3 mb-1 mt-0">{post.title}</h1>
 
               <div
-                class="text-justify text-body mt-3"
+                className="text-justify text-body mt-3"
                 dangerouslySetInnerHTML={{ __html: post.description }}
               ></div>
             </div>

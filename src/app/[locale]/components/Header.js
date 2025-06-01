@@ -45,7 +45,7 @@ export default function Heade({ post }) {
     <header>
       <nav class="navbar navbar-expand-lg" aria-label="Offcanvas navbar large">
         <div class="container">
-          <Link class="navbar-brand" href={`/${locale}`}>
+          <Link class="navbar-brand" href={`/${locale}/`}>
             <Image src="/image/logo.svg" width={120} height={50} title={post.site_name} alt={post.site_name} />
           </Link>
 
@@ -78,8 +78,9 @@ export default function Heade({ post }) {
               </ul>
 
               <SwitchLang />
-              <Link href={`/${locale}/contact`} class="btn btn-outline-primary px-4">{t('contact')}</Link>
-              <Link href={`/${locale}/pricing`} class="btn btn-primary px-4 ms-2">{t('booking')}</Link>
+
+              <Link href={`/${locale}/contact`} class="btn btn-outline-primary px-4 mx-md-3 me-3">{t('contact')}</Link>
+              <Link href={`/${locale}/pricing`} class="btn btn-primary px-4">{t('booking')}</Link>
             </div>
           </div>
         </div>
