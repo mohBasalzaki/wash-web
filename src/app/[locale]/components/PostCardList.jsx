@@ -1,8 +1,11 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 
 export default function PostCardList({ posts, locale }) {
+  const t = useTranslations('Home');
+
   if (!posts || posts.length === 0) return null;
 
   const postsPerPage = 10;
@@ -60,7 +63,7 @@ export default function PostCardList({ posts, locale }) {
           <ul className="pagination justify-content-center">
             <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
               <button className="page-link" onClick={() => goToPage(currentPage - 1)}>
-                السابق
+                {t('previous')}
               </button>
             </li>
 
@@ -69,15 +72,15 @@ export default function PostCardList({ posts, locale }) {
                 key={i}
                 className={`page-item ${currentPage === i + 1 ? 'active' : ''}`}
               >
-                <button className="page-link" onClick={() => goToPage(i + 1)}>
+                <button className="page-link px-3" onClick={() => goToPage(i + 1)}>
                   {i + 1}
                 </button>
               </li>
             ))}
 
             <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-              <button className="page-link" onClick={() => goToPage(currentPage + 1)}>
-                التالي
+              <button className="page-link px-3" onClick={() => goToPage(currentPage + 1)}>
+                {t('next')}
               </button>
             </li>
           </ul>

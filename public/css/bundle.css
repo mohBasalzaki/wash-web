@@ -154,14 +154,14 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
 }
 
 [dir="rtl"] .promo--img {
-    width: 33vh;
+    width: 28.5vh !important;
     right: auto;
     left: 10vw;
     bottom: 0;
 }
 
 [dir="ltr"] .promo--img {
-    width: 33vh;
+    width: 28.5vh !important;
     right: 10vw;
     left: auto;
     bottom: 0;

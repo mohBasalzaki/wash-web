@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "https://rewash-store.bright-ignite.com/api";
+const API_BASE_URL = "https://dev.rewash.store/api";
 
 function getAxiosInstance(locale = "ar") {
   return axios.create({

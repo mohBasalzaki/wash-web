@@ -28,25 +28,17 @@ export default async function AppPromotion({ locale }) {
                 <p className="text-justify m-0">{post.description}</p>
               </div>
 
-              <div className="d-grid d-md-flex align-items-center">
-                <Link href={post.button_link.google} className="btn btn-light rounded-1 px-3" target="_blank" rel="noreferrer">
-                  <div className="d-flex justify-content-center align-items-center">
-                    <img src="/image/google_play.webp" width="30" loading="lazy" alt="Google Play" />
-                    <div className="text-start ms-2">
-                      <small className="m-0">تنزيل من</small>
-                      <h6 className="m-0">Google Play</h6>
-                    </div>
-                  </div>
+              <div className="d-flex flex-column flex-md-row align-items-center gap-2">
+                <Link href={post.button_link.google} target="_blank" rel="noreferrer">
+                  <img src="/image/googleStore.png" className="w-100" loading="lazy" alt="Google Play" />
                 </Link>
 
-                <Link href={post.button_link.apple} className="btn btn-light rounded-1 px-3 ms-md-3 mt-md-0 mt-3" target="_blank" rel="noreferrer">
-                  <div className="d-flex justify-content-center align-items-center">
-                    <img src="/image/app_store.webp" width="30" loading="lazy" alt="App Store" />
-                    <div className="text-start ms-2">
-                      <small className="m-0">تنزيل من</small>
-                      <h6 className="m-0">Apple Store</h6>
-                    </div>
-                  </div>
+                <Link href={post.button_link.apple} target="_blank" rel="noreferrer">
+                  <img src="/image/appStore.png" className="w-100" loading="lazy" alt="App Store" />
+                </Link>
+
+                <Link href={"#"} target="_blank" rel="noreferrer">
+                  <img src="/image/huaweiStore.png" className="w-100" loading="lazy" alt="Huawei Store" />
                 </Link>
               </div>
             </div>
